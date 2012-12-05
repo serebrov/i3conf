@@ -150,26 +150,24 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-        #status_command conky -c ~/.i3/i3conky.conf | dzen2 -h '17' -w '600' -x '1317' -y '1062' -bg '#3c3b37' -ta 'rm'
-        #position bottom
-        #tray_output none
-        #colors {
-                #background #3c3b37
-                #statusline #dfd5c8
-
-                ## focused_workspace  #ffffff #285577
-                ## active_workspace   #ffffff #333333
-                #inactive_workspace #dfd5c8 #222222
-                ## urgent_workspace   #ffffff #900000
-        #}
+        mode hide
+        modifier $mod
+        status_command i3status --config ~/.i3/.i3status.conf
 }
 
+# before autostart
+#exec --no-startup-id pactl upload-sample ~/.i3/that_was_easy.wav that_was_easy
+exec urxvt -name scratchpad -e bash
+exec ~/.i3/autostart
+exec google-chrome
+exec tilda
+exec nm-applet
+
+# autostart
 # http://faq.i3wm.org/question/6/how-can-i-set-a-desktop-background-image-in-i3/
 exec --no-startup-id nitrogen --restore
+
 # http://faq.i3wm.org/question/2/how-can-i-use-networkmanager-with-i3/
-exec --no-startup-id nm-applet
-exec --no-startup-id tilda
 # https://bitbucket.org/aleufroy/dotconfig/src/f45ab42daa54/config/i3/config
 # http://www.xgu.ru/wiki/xkb
 exec xmessage -file /etc/i3/welcome
@@ -177,13 +175,23 @@ exec setxkbmap us,ru
 exec setxkbmap -option "grp:caps_toggle,grp_led:scroll"
 exec setxkbmap -option compose:menu
 
+# http://i3wm.org/docs/user-contributed/lzap-config.html
+# workspace assignment (use "xprop")
+assign [class="^Deadbeef$"] 2
+assign [class="^empathy$"] 3
+#assign [class="^URxvt$" instance="^mail$"] 4
+#assign [title="Lingea Lexicon 5$"] 8
+
+# http://i3wm.org/docs/user-contributed/lzap-config.html
 # http://habrahabr.ru/post/150100/
 #Gedit, Nautilus, диалог Nautilus'а «Действия над файлами» и лаунчер Gmrun по-умолчанию в флоат режиме:
 for_window [class="^Gedit$" instance="^gedit$"] floating enable
-for_window [class="^Nautilus$" instance="^nautilus$"] floating enable
+#for_window [class="^Nautilus$" instance="^nautilus$"] floating enable
 for_window [class="^Nautilus$" instance="^file_progress$"] floating enable
 for_window [class="^Gmrun$" instance="^gmrun$"] floating enable
 for_window [class="^SkypeTab$" instance="^SkypeTab$"] focus; move up; resize shrink down 30 px or 30 ppt; workspace 1: desktop
+for_window [class="^URxvt$" instance="scratchpad"] border 1pixel; move scratchpad
+for_window [class="^Google-chrome$"] border none
 
 #Сделать скриншот:
 bindsym Print exec scrot 'f%Y-%m-%d-%s_$wx$h.png' -e 'mv $f /home/seb/'
@@ -192,5 +200,22 @@ bindsym Print exec scrot 'f%Y-%m-%d-%s_$wx$h.png' -e 'mv $f /home/seb/'
 bindsym $mod+g exec gmrun
 
 #Управление громкостью клавишей Win+плюс\минус:
-bindsym $mod+KP_Add exec amixer -c 0 sset PCM,0 5+
-bindsym $mod+KP_Subtract exec amixer -c 0 sset PCM,0 5-
+#bindsym $mod+KP_Add exec amixer -c 0 sset PCM,0 5+
+#bindsym $mod+KP_Subtract exec amixer -c 0 sset PCM,0 5-
+# http://faq.i3wm.org/question/125/how-to-change-the-systems-volume/
+exec amixer -q set Headphone unmute
+bindsym $mod+KP_Add exec amixer -q set Master 2dB+ unmute
+bindsym $mod+KP_Subtract exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
+
+# http://i3wm.org/docs/user-contributed/lzap-config.html
+# border changing
+bindsym $mod+b border toggle
+# scratchpad
+bindsym $mod+m move scratchpad
+bindsym $mod+o scratchpad show
