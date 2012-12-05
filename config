@@ -150,16 +150,47 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        #status_command i3status
+        status_command conky -c ~/.i3/i3conky.conf | dzen2 -h '17' -w '600' -x '1317' -y '1062' -bg '#3c3b37' -ta 'rm'
+        position bottom
+        tray_output none
+        colors {
+                background #3c3b37
+                statusline #dfd5c8
+
+                # focused_workspace  #ffffff #285577
+                # active_workspace   #ffffff #333333
+                inactive_workspace #dfd5c8 #222222
+                # urgent_workspace   #ffffff #900000
+        }
 }
 
 # http://faq.i3wm.org/question/6/how-can-i-set-a-desktop-background-image-in-i3/
 exec --no-startup-id nitrogen --restore
 # http://faq.i3wm.org/question/2/how-can-i-use-networkmanager-with-i3/
 exec --no-startup-id nm-applet
+exec --no-startup-id tilda
 # https://bitbucket.org/aleufroy/dotconfig/src/f45ab42daa54/config/i3/config
 # http://www.xgu.ru/wiki/xkb
 exec xmessage -file /etc/i3/welcome
 exec setxkbmap us,ru
 exec setxkbmap -option "grp:caps_toggle,grp_led:scroll"
 exec setxkbmap -option compose:menu
+
+# http://habrahabr.ru/post/150100/
+#Gedit, Nautilus, диалог Nautilus'а «Действия над файлами» и лаунчер Gmrun по-умолчанию в флоат режиме:
+for_window [class="^Gedit$" instance="^gedit$"] floating enable
+for_window [class="^Nautilus$" instance="^nautilus$"] floating enable
+for_window [class="^Nautilus$" instance="^file_progress$"] floating enable
+for_window [class="^Gmrun$" instance="^gmrun$"] floating enable
+for_window [class="^SkypeTab$" instance="^SkypeTab$"] focus; move up; resize shrink down 30 px or 30 ppt; workspace 1: desktop
+
+#Сделать скриншот:
+bindsym Print exec scrot 'f%Y-%m-%d-%s_$wx$h.png' -e 'mv $f /home/seb/'
+
+#Gmrun (sudo apt-get install gmrun)
+bindsym $mod+g exec gmrun
+
+#Управление громкостью клавишей Win+плюс\минус:
+bindsym $mod+KP_Add exec amixer -c 0 sset PCM,0 5+
+bindsym $mod+KP_Subtract exec amixer -c 0 sset PCM,0 5-
