@@ -178,7 +178,7 @@ exec setxkbmap -option compose:menu
 # http://i3wm.org/docs/user-contributed/lzap-config.html
 # workspace assignment (use "xprop")
 assign [class="^Deadbeef$"] 2
-assign [class="^empathy$"] 3
+assign [class="^Empathy$"] 3
 #assign [class="^URxvt$" instance="^mail$"] 4
 #assign [title="Lingea Lexicon 5$"] 8
 
