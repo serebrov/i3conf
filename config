@@ -151,7 +151,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         mode hide
-        modifier $mod
+        #modifier $mod
         status_command i3status --config ~/.i3/.i3status.conf
 }
 
