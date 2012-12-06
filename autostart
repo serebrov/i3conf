@@ -18,5 +18,4 @@
 # LC_ALL=C parcellite &
 
 ## OSD
-dunst &
-
+# dunst &
