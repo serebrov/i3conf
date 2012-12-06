@@ -155,26 +155,6 @@ bar {
         status_command i3status --config ~/.i3/.i3status.conf
 }
 
-# before autostart
-#exec --no-startup-id pactl upload-sample ~/.i3/that_was_easy.wav that_was_easy
-exec urxvt -name scratchpad -e bash
-exec ~/.i3/autostart
-exec google-chrome
-exec tilda
-exec nm-applet
-
-# autostart
-# http://faq.i3wm.org/question/6/how-can-i-set-a-desktop-background-image-in-i3/
-exec --no-startup-id nitrogen --restore
-
-# http://faq.i3wm.org/question/2/how-can-i-use-networkmanager-with-i3/
-# https://bitbucket.org/aleufroy/dotconfig/src/f45ab42daa54/config/i3/config
-# http://www.xgu.ru/wiki/xkb
-exec xmessage -file /etc/i3/welcome
-exec setxkbmap us,ru
-exec setxkbmap -option "grp:caps_toggle,grp_led:scroll"
-exec setxkbmap -option compose:menu
-
 # http://i3wm.org/docs/user-contributed/lzap-config.html
 # workspace assignment (use "xprop")
 assign [class="^Deadbeef$"] 2
@@ -203,7 +183,6 @@ bindsym $mod+g exec gmrun
 #bindsym $mod+KP_Add exec amixer -c 0 sset PCM,0 5+
 #bindsym $mod+KP_Subtract exec amixer -c 0 sset PCM,0 5-
 # http://faq.i3wm.org/question/125/how-to-change-the-systems-volume/
-exec amixer -q set Headphone unmute
 bindsym $mod+KP_Add exec amixer -q set Master 2dB+ unmute
 bindsym $mod+KP_Subtract exec amixer -q set Master 2dB- unmute
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
@@ -219,3 +198,6 @@ bindsym $mod+b border toggle
 # scratchpad
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
+
+# autostart
+exec ~/.i3/autostart
