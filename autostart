@@ -25,7 +25,7 @@ google-chrome &
 tilda &
 nm-applet &
 gnome-sound-applet &
-#xterm -name scratchpad -e bash &
+xterm -name scratchpad -e zsh &
 
 # http://faq.i3wm.org/question/2/how-can-i-use-networkmanager-with-i3/
 # https://bitbucket.org/aleufroy/dotconfig/src/f45ab42daa54/config/i3/config
