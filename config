@@ -155,13 +155,24 @@ bar {
         status_command i3status --config ~/.i3/.i3status.conf
 }
 
+### Additional settings
+
+# http://i3wm.org/docs/user-contributed/lzap-config.html
+# border changing
+bindsym $mod+b border toggle
+# scratchpad
+bindsym $mod+m move scratchpad
+bindsym $mod+o scratchpad show
+
 # before autostart
-#exec --no-startup-id pactl upload-sample ~/.i3/that_was_easy.wav that_was_easy
-exec urxvt -name scratchpad -e bash
+# exec --no-startup-id pactl upload-sample ~/.i3/that_was_easy.wav that_was_easy
+# exec urxvt -name scratchpad -e bash
+exec xterm -name scratchpad -e bash
 exec ~/.i3/autostart
 exec google-chrome
 exec tilda
 exec nm-applet
+exec gnome-sound-applet
 
 # autostart
 # http://faq.i3wm.org/question/6/how-can-i-set-a-desktop-background-image-in-i3/
@@ -179,29 +190,29 @@ exec setxkbmap -option compose:menu
 # workspace assignment (use "xprop")
 assign [class="^Deadbeef$"] 2
 assign [class="^Empathy$"] 3
-#assign [class="^URxvt$" instance="^mail$"] 4
-#assign [title="Lingea Lexicon 5$"] 8
+# assign [class="^URxvt$" instance="^mail$"] 4
+# assign [title="Lingea Lexicon 5$"] 8
 
 # http://i3wm.org/docs/user-contributed/lzap-config.html
 # http://habrahabr.ru/post/150100/
-#Gedit, Nautilus, диалог Nautilus'а «Действия над файлами» и лаунчер Gmrun по-умолчанию в флоат режиме:
-for_window [class="^Gedit$" instance="^gedit$"] floating enable
-#for_window [class="^Nautilus$" instance="^nautilus$"] floating enable
+# Gedit, Nautilus, диалог Nautilus'а «Действия над файлами» и лаунчер Gmrun по-умолчанию в флоат режиме:
+for_window [class="^Gcalctool$"] floating enable
+# for_window [class="^Nautilus$" instance="^nautilus$"] floating enable
 for_window [class="^Nautilus$" instance="^file_progress$"] floating enable
 for_window [class="^Gmrun$" instance="^gmrun$"] floating enable
 for_window [class="^SkypeTab$" instance="^SkypeTab$"] focus; move up; resize shrink down 30 px or 30 ppt; workspace 1: desktop
 for_window [class="^URxvt$" instance="scratchpad"] border 1pixel; move scratchpad
 for_window [class="^Google-chrome$"] border none
 
-#Сделать скриншот:
+# Сделать скриншот:
 bindsym Print exec scrot 'f%Y-%m-%d-%s_$wx$h.png' -e 'mv $f /home/seb/'
 
-#Gmrun (sudo apt-get install gmrun)
+# Gmrun (sudo apt-get install gmrun)
 bindsym $mod+g exec gmrun
 
-#Управление громкостью клавишей Win+плюс\минус:
-#bindsym $mod+KP_Add exec amixer -c 0 sset PCM,0 5+
-#bindsym $mod+KP_Subtract exec amixer -c 0 sset PCM,0 5-
+# Управление громкостью клавишей Win+плюс\минус:
+# bindsym $mod+KP_Add exec amixer -c 0 sset PCM,0 5+
+# bindsym $mod+KP_Subtract exec amixer -c 0 sset PCM,0 5-
 # http://faq.i3wm.org/question/125/how-to-change-the-systems-volume/
 exec amixer -q set Headphone unmute
 bindsym $mod+KP_Add exec amixer -q set Master 2dB+ unmute
@@ -212,10 +223,3 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 
 bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
-
-# http://i3wm.org/docs/user-contributed/lzap-config.html
-# border changing
-bindsym $mod+b border toggle
-# scratchpad
-bindsym $mod+m move scratchpad
-bindsym $mod+o scratchpad show
