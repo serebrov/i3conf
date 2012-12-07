@@ -24,6 +24,8 @@ xmessage -file /etc/i3/welcome &
 google-chrome &
 tilda &
 nm-applet &
+gnome-sound-applet &
+#xterm -name scratchpad -e bash &
 
 # http://faq.i3wm.org/question/2/how-can-i-use-networkmanager-with-i3/
 # https://bitbucket.org/aleufroy/dotconfig/src/f45ab42daa54/config/i3/config
