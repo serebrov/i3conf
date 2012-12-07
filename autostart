@@ -19,3 +19,22 @@
 
 ## OSD
 # dunst &
+
+xmessage -file /etc/i3/welcome &
+google-chrome &
+tilda &
+nm-applet &
+
+# http://faq.i3wm.org/question/2/how-can-i-use-networkmanager-with-i3/
+# https://bitbucket.org/aleufroy/dotconfig/src/f45ab42daa54/config/i3/config
+# http://www.xgu.ru/wiki/xkb
+setxkbmap us,ru
+setxkbmap -option "grp:caps_toggle,grp_led:scroll"
+setxkbmap -option compose:menu
+
+amixer -q set Headphone mute
+amixer -q set Headphone unmute
+amixer -q set Master 50% unmute
+
+# http://faq.i3wm.org/question/6/how-can-i-set-a-desktop-background-image-in-i3/
+nitrogen --restore &
