@@ -25,6 +25,9 @@ google-chrome &
 tilda &
 nm-applet &
 gnome-sound-applet &
+gnome-settings-daemon &
+
+# http://off-topic.sardemff7.net/post/2012/06/21/About-the-GNOME-features-in-an-alternative-environment
 xterm -name scratchpad -e zsh &
 
 # http://faq.i3wm.org/question/2/how-can-i-use-networkmanager-with-i3/
