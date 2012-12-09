@@ -5,7 +5,7 @@
 
 [installation](http://i3wm.org/docs/repositories.html)
 
-For wallbaper:
+For wallpaper:
 
     sudo apt-get install nitrogern
 
@@ -24,6 +24,7 @@ File manager:
 
     vim ~/.Xresources
 
+
     !xtermfont: terminus-12 ! Use a nice truetype font and size by default... xtermfaceName: DejaVu Sans Mono Book xterm*faceSize: 10
     ! Every shell is a login shell by default (for inclusion of all necessary environment variables) xterm*loginshell: true
     ! I like a LOT of scrollback... xterm*savelines: 16384
@@ -31,5 +32,6 @@ File manager:
     ! DOS-box colours... xtermforeground: rgb:a8/a8/a8 xtermbackground: rgb:00/00/00 xtermcolor0: rgb:00/00/00 xtermcolor1: rgb:a8/00/00 xtermcolor2: rgb:00/a8/00 xtermcolor3: rgb:a8/54/00 xtermcolor4: rgb:00/00/a8 xtermcolor5: rgb:a8/00/a8 xtermcolor6: rgb:00/a8/a8 xtermcolor7: rgb:a8/a8/a8 xtermcolor8: rgb:54/54/54 xtermcolor9: rgb:fc/54/54 xtermcolor10: rgb:54/fc/54 xtermcolor11: rgb:fc/fc/54 xtermcolor12: rgb:54/54/fc xtermcolor13: rgb:fc/54/fc xtermcolor14: rgb:54/fc/fc xtermcolor15: rgb:fc/fc/fc
     ! right hand side scrollbar... xtermrightScrollBar: true xtermScrollBar: true
     ! stop output to terminal from jumping down to bottom of scroll again xterm*scrollTtyOutput: false
+
 
     xrdb -merge ~/.Xresources
