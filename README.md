@@ -22,13 +22,11 @@ File manager:
 
 [xterm](http://scarygliders.net/2011/12/01/customize-xterm-the-original-and-best-terminal)
 
-* Edit or create .Xresources:
-
+Edit or create .Xresources:
 
     vim ~/.Xresources
 
-* Settings:
-
+Settings:
 
     !xterm*font: terminus-12
     ! Use a nice truetype font and size by default...
@@ -71,7 +69,6 @@ File manager:
     ! stop output to terminal from jumping down to bottom of scroll again
     xterm*scrollTtyOutput: false
 
-* Apply changes:
-
+Apply changes:
 
     xrdb -merge ~/.Xresources
