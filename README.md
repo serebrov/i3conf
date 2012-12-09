@@ -24,9 +24,11 @@ File manager:
 
 * Edit or create .Xresources:
 
+
     vim ~/.Xresources
 
 * Settings:
+
 
     !xterm*font: terminus-12
     ! Use a nice truetype font and size by default...
@@ -70,5 +72,6 @@ File manager:
     xterm*scrollTtyOutput: false
 
 * Apply changes:
+
 
     xrdb -merge ~/.Xresources
