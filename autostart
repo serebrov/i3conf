@@ -22,10 +22,22 @@
 
 xmessage -file /etc/i3/welcome &
 google-chrome &
-tilda &
+#tilda &
+# network
 nm-applet &
+# sound
 gnome-sound-applet &
+# settings
 gnome-settings-daemon &
+# mounting
+gnome-volume-manager &
+
+# gnome keyring
+# http://blog.san-ss.com.ar/2011/03/using-gnome-keyring-in-xmonad.html
+eval $(gnome-keyring-daemon --start)
+export GNOME_KEYRING_SOCKET
+export GNOME_KEYRING_PID
+export SSH_AUTH_SOCK="$GNOME_KEYRING_CONTROL/ssh"
 
 # http://off-topic.sardemff7.net/post/2012/06/21/About-the-GNOME-features-in-an-alternative-environment
 xterm -name xterm_scratchpad -e zsh &
