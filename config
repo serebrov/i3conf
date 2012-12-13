@@ -175,7 +175,7 @@ assign [class="^Empathy$"] 3
 # http://habrahabr.ru/post/150100/
 # Gedit, Nautilus, диалог Nautilus'а «Действия над файлами» и лаунчер Gmrun по-умолчанию в флоат режиме:
 for_window [class="^Gcalctool$"] floating enable
-# for_window [class="^Nautilus$" instance="^nautilus$"] floating enable
+for_window [class="^Gnome-keyring-prompt-3$"] floating enable
 for_window [class="^Nautilus$" instance="^file_progress$"] floating enable
 for_window [class="^Gmrun$" instance="^gmrun$"] floating enable
 for_window [class="^SkypeTab$" instance="^SkypeTab$"] focus; move up; resize shrink down 30 px or 30 ppt; workspace 1: desktop
