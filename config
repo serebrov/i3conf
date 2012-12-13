@@ -167,8 +167,9 @@ bindsym $mod+o scratchpad show
 # http://i3wm.org/docs/user-contributed/lzap-config.html
 # workspace assignment (use "xprop")
 assign [class="^Deadbeef$"] 2
-assign [class="^Empathy$"] 3
 assign [class="^Psensor$"] 2
+assign [class="^Empathy$"] 3
+assign [class="^Firefox$"] 4
 # assign [class="^URxvt$" instance="^mail$"] 4
 # assign [title="Lingea Lexicon 5$"] 8
 
