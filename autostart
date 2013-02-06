@@ -31,6 +31,8 @@ gnome-sound-applet &
 gnome-settings-daemon &
 # mounting
 gnome-volume-manager &
+# apps menu
+classicmenu-indicator &
 
 # gnome keyring
 # http://blog.san-ss.com.ar/2011/03/using-gnome-keyring-in-xmonad.html
