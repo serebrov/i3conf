@@ -196,6 +196,8 @@ bindsym Print exec scrot 'f%Y-%m-%d-%s_$wx$h.png' -e 'mv $f /home/seb/'
 
 # Gmrun (sudo apt-get install gmrun)
 bindsym $mod+g exec gmrun
+# Also Gmrun just to disable mod+p (it switches monitors off)
+bindsym $mod+p exec gmrun
 
 # Управление громкостью клавишей Win+плюс\минус:
 # bindsym $mod+KP_Add exec amixer -c 0 sset PCM,0 5+
