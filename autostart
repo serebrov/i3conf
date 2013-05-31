@@ -30,7 +30,7 @@ gnome-sound-applet &
 # settings
 gnome-settings-daemon &
 # mounting
-gnome-volume-manager &
+#gnome-volume-manager &
 # apps menu
 classicmenu-indicator &
 
