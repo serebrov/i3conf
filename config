@@ -12,9 +12,7 @@
 set $mod Mod4
 
 # font for window titles. ISO 10646 = Unicode
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-#colors/fonts from https://github.com/lkraav/dotfiles/blob/master/.i3/config
-font xft:monospace bold 9
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -27,6 +25,8 @@ bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
+#
+#colors from https://github.com/lkraav/dotfiles/blob/master/.i3/config
 #bindsym $mod+d exec i3-dmenu-desktop --dmenu='dmenu -fn monospace:bold:size=9 -nb "#eee8d5" -nf "#073642" -sb "#dc322f" -p "> " -h 19'
 bindsym $mod+d exec dmenu_run -fn monospace:bold:size=9 -nb '#eee8d5' -nf '#073642' 
 # -sb '#dc322f' -p '> '
