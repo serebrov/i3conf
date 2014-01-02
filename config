@@ -158,7 +158,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        mode hide
+        #mode hide
+        mode dock
         #modifier $mod
         status_command i3status --config ~/.i3/.i3status.conf
         colors {
@@ -226,6 +227,8 @@ bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 
 bindsym $mod+Shift+P exec "~/deadbeef/deadbeef & empathy &"
+# see https://github.com/cknadler/vim-anywhere
+bindsym $mod+Shift+V exec "~/.vim-anywhere/bin/run"
 
 # class                 border  backgr. text    indicator
 client.focused          #859900 #859900 #fdf6e3 #2e9ef4
