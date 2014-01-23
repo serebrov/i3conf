@@ -228,7 +228,7 @@ bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 
 bindsym $mod+Shift+P exec "~/deadbeef/deadbeef & empathy &"
 # see https://github.com/cknadler/vim-anywhere
-bindsym $mod+Shift+V exec "~/.vim-anywhere/bin/run"
+bindsym $mod+i exec "~/.vim-anywhere/bin/run"
 
 # class                 border  backgr. text    indicator
 client.focused          #859900 #859900 #fdf6e3 #2e9ef4
