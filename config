@@ -176,6 +176,7 @@ bar {
 
 focus_follows_mouse no
 workspace_auto_back_and_forth yes
+workspace_layout tabbed
 
 # http://i3wm.org/docs/user-contributed/lzap-config.html
 # border changing
@@ -201,9 +202,11 @@ for_window [class="^Gnome-keyring-prompt-3$"] floating enable
 for_window [class="^Nautilus$" instance="^file_progress$"] floating enable
 for_window [class="^Gmrun$" instance="^gmrun$"] floating enable
 for_window [class="^SkypeTab$" instance="^SkypeTab$"] focus; move up; resize shrink down 30 px or 30 ppt; workspace 1: desktop
-for_window [class="^Gnome-terminal$" window_role="xterm_scratchpad"] border 1pixel; move scratchpad
+for_window [class="^Gnome-terminal$"] border none
+for_window [class="^urxvt$" window_role="xterm_scratchpad"] border 1pixel; move scratchpad
 for_window [class="^Google-chrome$"] border none
 for_window [class="^Psensor$"] floating enable
+for_window [class="urxvt"] border none
 
 # Сделать скриншот:
 bindsym Print exec scrot 'f%Y-%m-%d-%s_$wx$h.png' -e 'mv $f /home/seb/'
