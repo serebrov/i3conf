@@ -32,6 +32,7 @@ google-chrome &
 nm-applet &
 # sound
 gnome-sound-applet &
+cinnamon-sound-applet &
 # settings
 gnome-settings-daemon &
 # mounting
