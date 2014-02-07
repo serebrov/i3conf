@@ -39,17 +39,26 @@ gnome-settings-daemon &
 #gnome-volume-manager &
 # apps menu
 classicmenu-indicator &
+# gnome-power-manager &
+# for power settings: gnome-power-preferences
 
 # gnome keyring
 # http://blog.san-ss.com.ar/2011/03/using-gnome-keyring-in-xmonad.html
 eval $(gnome-keyring-daemon --start)
 export GNOME_KEYRING_SOCKET
 export GNOME_KEYRING_PID
-export SSH_AUTH_SOCK="$GNOME_KEYRING_CONTROL/ssh"
+#add this to .profile
+#export SSH_AUTH_SOCK="$GNOME_KEYRING_CONTROL/ssh"
+
+#export GNOME_DESKTOP_SESSION_ID=1
+#export SSH_ASKPASS=/usr/bin/ssh-askpass
+#eval $(ssh-agent)
+#ssh-add
 
 # http://off-topic.sardemff7.net/post/2012/06/21/About-the-GNOME-features-in-an-alternative-environment
-# xterm -name xterm_scratchpad -e zsh &
-urxvt --role=xterm_scratchpad -e zsh &
+#xterm -name xterm_scratchpad -e zsh &
+#urxvt --name xterm_scratchpad &
+gnome-terminal --role=xterm_scratchpad -e zsh &
 
 # http://faq.i3wm.org/question/2/how-can-i-use-networkmanager-with-i3/
 # https://bitbucket.org/aleufroy/dotconfig/src/f45ab42daa54/config/i3/config
