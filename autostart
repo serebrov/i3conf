@@ -1,7 +1,11 @@
 #!/bin/sh
 
+SCRIPT_PATH=`dirname $0`
+
 # http://off-topic.sardemff7.net/post/2012/06/21/About-the-GNOME-features-in-an-alternative-environment
 #xterm -name xterm_scratchpad -e zsh &
 #urxvt --name xterm_scratchpad &
 #gnome-terminal --role=xterm_scratchpad -e zsh &
 
+#setxkbmap us,ru -option "grp:caps_toggle,grp_led:scroll" -option compose:menu
+$SCRIPT_PATH/keyboard-setup.sh
