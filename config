@@ -229,7 +229,7 @@ bindsym XF86AudioMute exec amixer -q set Master toggle
 bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 
-bindsym $mod+Shift+P exec "~/deadbeef/deadbeef & empathy &"
+bindsym $mod+Shift+P exec "~/deadbeef/deadbeef & pidgin &"
 # see https://github.com/cknadler/vim-anywhere
 bindsym $mod+i exec "~/.vim-anywhere/bin/run"
 
@@ -238,7 +238,7 @@ client.focused          #859900 #859900 #fdf6e3 #2e9ef4
 client.focused_inactive #268bd2 #268bd2 #fdf6e3 #484e50
 client.unfocused        #333333 #93a1a1 #fdf6e3 #292d2e
 
-exec xsetroot -solid "#e1dce0"
+# exec xsetroot -solid "#e1dce0"
 
 # autostart
 exec ~/.i3/autostart
