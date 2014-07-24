@@ -216,15 +216,17 @@ bindsym $mod+g exec gmrun
 # Also Gmrun just to disable mod+p (it switches monitors off)
 bindsym $mod+p exec gmrun
 
-# Управление громкостью клавишей Win+плюс\минус:
-# bindsym $mod+KP_Add exec amixer -c 0 sset PCM,0 5+
-# bindsym $mod+KP_Subtract exec amixer -c 0 sset PCM,0 5-
 # http://faq.i3wm.org/question/125/how-to-change-the-systems-volume/
-bindsym $mod+KP_Add exec amixer -q set Master 2dB+ unmute
-bindsym $mod+KP_Subtract exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+#bindsym $mod+KP_Add exec amixer -q set Master 2dB+ unmute
+#bindsym $mod+KP_Subtract exec amixer -q set Master 2dB- unmute
+#bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+#bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+#bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym $mod+KP_Add exec --no-startup-id "~/.i3/volnoti-handle.sh up"
+bindsym $mod+KP_Subtract exec --no-startup-id "~/.i3/volnoti-handle.sh down"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "~/.i3/volnoti-handle.sh up"
+bindsym XF86AudioLowerVolume exec --no-startup-id "~/.i3/volnoti-handle.sh down"
+bindsym XF86AudioMute exec --no-startup-id "~/.i3/volnoti-handle.sh mute"
 
 bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
