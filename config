@@ -231,6 +231,8 @@ bindsym XF86AudioMute exec --no-startup-id "~/.i3/volnoti-handle.sh mute"
 bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 
+bindsym $mod+t exec "~/.i3/touchpad-toggle.sh"
+
 bindsym $mod+Shift+P exec "~/deadbeef/deadbeef & pidgin &"
 # see https://github.com/cknadler/vim-anywhere
 bindsym $mod+i exec "~/.vim-anywhere/bin/run"
