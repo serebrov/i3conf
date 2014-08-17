@@ -208,7 +208,7 @@ for_window [class="^Google-chrome$"] border none
 for_window [class="^Psensor$"] floating enable
 for_window [class="urxvt"] border none
 
-# Сделать скриншот:
+# Screenshot:
 bindsym Print exec scrot 'f%Y-%m-%d-%s_$wx$h.png' -e 'mv $f /home/seb/'
 
 # Gmrun (sudo apt-get install gmrun)
@@ -222,16 +222,16 @@ bindsym $mod+p exec gmrun
 #bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 #bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 #bindsym XF86AudioMute exec amixer -q set Master toggle
-bindsym $mod+KP_Add exec --no-startup-id "~/.i3/volnoti-handle.sh up"
-bindsym $mod+KP_Subtract exec --no-startup-id "~/.i3/volnoti-handle.sh down"
-bindsym XF86AudioRaiseVolume exec --no-startup-id "~/.i3/volnoti-handle.sh up"
-bindsym XF86AudioLowerVolume exec --no-startup-id "~/.i3/volnoti-handle.sh down"
-bindsym XF86AudioMute exec --no-startup-id "~/.i3/volnoti-handle.sh mute"
+bindsym $mod+KP_Add exec --no-startup-id "~/.i3/scripts/volnoti-handle.sh up"
+bindsym $mod+KP_Subtract exec --no-startup-id "~/.i3/scripts/volnoti-handle.sh down"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "~/.i3/scripts/volnoti-handle.sh up"
+bindsym XF86AudioLowerVolume exec --no-startup-id "~/.i3/scripts/volnoti-handle.sh down"
+bindsym XF86AudioMute exec --no-startup-id "~/.i3/scripts/volnoti-handle.sh mute"
 
 bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
 
-bindsym $mod+t exec "~/.i3/touchpad-toggle.sh"
+bindsym $mod+t exec "~/.i3/scripts/touchpad-toggle.sh"
 
 bindsym $mod+Shift+P exec "~/deadbeef/deadbeef & pidgin &"
 # see https://github.com/cknadler/vim-anywhere
