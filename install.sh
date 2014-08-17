@@ -1,10 +1,13 @@
 #!/bin/bash
 
-sudo apt-get -y install feh
-sudo apt-get -y install xbacklight
+sudo apt-get -y install feh scrot gmrun
+sudo apt-get -y install xbacklight xclip
 
 sudo apt-get -y install dbus
 sudo apt-get -y install libdbus-glib-1-dev
+
+#https://github.com/cknadler/vim-anywhere
+curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash
 
 cd ~
 git clone git://github.com/davidbrazdil/volnoti.git
