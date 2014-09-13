@@ -1,12 +1,15 @@
 #!/bin/bash
 
-sudo apt-get -y install feh scrot gmrun
+sudo apt-get -y install feh scrot shutter gmrun
 sudo apt-get -y install xbacklight xclip
 
 sudo apt-get -y install dbus
 sudo apt-get -y install libdbus-glib-1-dev
 
 sudo apt-get -y install acpi
+
+# Wicd is an open source wired and wireless network manager for Linux
+sudo apt-get -y install wicd
 
 #https://github.com/cknadler/vim-anywhere
 curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash
