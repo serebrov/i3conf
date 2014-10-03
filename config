@@ -17,6 +17,9 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# show/hide the status bar
+bindsym $mod+0 exec i3 bar mode toggle
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -70,6 +73,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout default
 
 # toggle tiling / floating
+# also moves back from the scratchpad
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
@@ -91,7 +95,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+#bindsym $mod+0 workspace 10
 
 # move focused container to workspace
 bindsym $mod+Shift+exclam move workspace 1
