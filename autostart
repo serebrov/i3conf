@@ -10,6 +10,7 @@ wicd-client &
 gnome-sound-applet &
 volnoti &
 pidgin &
+skype &
 ~/deadbeef/deadbeef &
 
 #setxkbmap us,ru -option "grp:caps_toggle,grp_led:scroll" -option compose:menu
