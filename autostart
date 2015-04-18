@@ -12,6 +12,7 @@ volnoti &
 pidgin &
 skype &
 ~/deadbeef/deadbeef &
+#rescuetime &
 
 #setxkbmap us,ru -option "grp:caps_toggle,grp_led:scroll" -option compose:menu
 $SCRIPT_PATH/keyboard-setup.sh
