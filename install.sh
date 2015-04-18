@@ -35,3 +35,13 @@ make
 sudo make install
 #You can have the .tar.gz source archive prepared simply by calling a provided script:
 #./package.sh
+
+### ISO, MDF, etc
+# Simple
+sudo apt-get install furiusisomount 
+# Full-featured, no version for ubuntu 14.10 in the ppa yet
+sudo sh -c 'echo "deb http://ppa.launchpad.net/cdemu/ppa/ubuntu trusty main" >> /etc/apt/sources.list'
+sudo sh -c 'echo "deb-src http://ppa.launchpad.net/cdemu/ppa/ubuntu trusty main" >> /etc/apt/sources.list'
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D782A00F
+sudo apt-get update
+sudo apt-get install gcdemu cdemu-client cdemu-daemon
