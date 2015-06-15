@@ -231,16 +231,16 @@ for_window [class="^Nautilus$" instance="^file_progress$"] floating enable
 for_window [class="^Gmrun$" instance="^gmrun$"] floating enable
 #for_window [class="^SkypeTab$" instance="^SkypeTab$"] focus; move up; resize shrink down 30 px or 30 ppt; workspace 1: desktop
 for_window [class="^Gnome-terminal$"] border none
-for_window [window_role="xterm_scratchpad"] border 1pixel; move scratchpad
-for_window [window_role="xterm_util"] floating enable; border none
-for_window [window_role="popup_editor"] floating enable; border none
+for_window [window_role="xterm_scratchpad"] border 1pixel, move scratchpad
+for_window [window_role="xterm_util"] floating enable, border none
+for_window [window_role="popup_editor"] border none, floating enable
 for_window [class="^Google-chrome$"] border none
 for_window [class="^Psensor$"] floating enable
 for_window [class="^Pidgin$"] floating enable
 for_window [class="^Skype$"] floating enable
 for_window [class="urxvt"] border none
-for_window [title="Wicd Network Manager"] floating enable; border normal
-for_window [title="- Shutter"] floating enable; border normal
+for_window [title="Wicd Network Manager"] floating enable, border normal
+for_window [title="- Shutter"] floating enable, border normal
 
 # Screenshot:
 bindsym Print exec scrot 'f%Y-%m-%d-%s_$wx$h.png' -e 'mv $f /home/seb/'
