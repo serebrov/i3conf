@@ -233,6 +233,7 @@ for_window [class="^Gmrun$" instance="^gmrun$"] floating enable
 for_window [class="^Gnome-terminal$"] border none
 for_window [window_role="xterm_scratchpad"] border 1pixel; move scratchpad
 for_window [window_role="xterm_util"] floating enable; border none
+for_window [window_role="popup_editor"] floating enable; border none
 for_window [class="^Google-chrome$"] border none
 for_window [class="^Psensor$"] floating enable
 for_window [class="^Pidgin$"] floating enable
