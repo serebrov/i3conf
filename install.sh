@@ -132,3 +132,12 @@ sudo sh -c 'echo "deb-src http://ppa.launchpad.net/cdemu/ppa/ubuntu trusty main"
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D782A00F
 sudo apt-get update
 sudo apt-get install gcdemu cdemu-client cdemu-daemon
+
+# https://help.ubuntu.com/community/SwapFaq
+# The default setting in Ubuntu is swappiness=60. 
+# Reducing the default value of swappiness will probably improve overall performance for a typical Ubuntu desktop installation. 
+# A value of swappiness=10 is recommended, but feel free to experiment. 
+# 
+# That's great, recommended value is 10 and default is 60
+# My machine works much better with 10
+echo "vm.swappiness=10" | sudo sh -c 'cat >> /etc/sysctl.conf'
