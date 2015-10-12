@@ -160,6 +160,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #https://faq.i3wm.org/question/279/how-do-you-use-i3-comfortably/
+# sudo pm-suspend does't work, TODO: fix, see the link below
+# http://stackoverflow.com/questions/20312961/why-sudo-pm-suspend-does-not-work-in-i3-tiling-window-manager
 mode  "(s)leep (h)ybernate (p)owersave (r)estart shut(d)own" {
 
         bindsym s exec sudo pm-suspend; mode "default"
@@ -242,6 +244,7 @@ for_window [class="^Skype$"] floating enable
 for_window [class="urxvt"] border none
 for_window [title="Wicd Network Manager"] floating enable, border normal
 for_window [title="- Shutter"] floating enable, border normal
+for_window [title="Only If"] floating enable
 
 # Screenshot:
 bindsym Print exec scrot 'f%Y-%m-%d-%s_$wx$h.png' -e 'mv $f /home/seb/'
