@@ -9,7 +9,7 @@ nm-applet &
 #wicd-client &
 gnome-sound-applet &
 volnoti &
-pidgin &
+#pidgin &
 skype &
 ~/deadbeef/deadbeef &
 #rescuetime &

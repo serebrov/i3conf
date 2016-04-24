@@ -98,6 +98,9 @@ sudo apt-get -y install acpi
 # Wicd is an open source wired and wireless network manager for Linux
 sudo apt-get -y install wicd
 
+# Edit mp3 / ogg tags (use the ~/.i3/tagedit.sh *.mp3 to edit tags in vim)
+sudo apt-get -y install id3v2
+
 #https://github.com/cknadler/vim-anywhere
 curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash
 
@@ -125,13 +128,31 @@ sudo make install
 
 ### ISO, MDF, etc
 # Simple
-sudo apt-get install furiusisomount 
+sudo apt-get -y install furiusisomount 
 # Full-featured, no version for ubuntu 14.10 in the ppa yet
 sudo sh -c 'echo "deb http://ppa.launchpad.net/cdemu/ppa/ubuntu trusty main" >> /etc/apt/sources.list'
 sudo sh -c 'echo "deb-src http://ppa.launchpad.net/cdemu/ppa/ubuntu trusty main" >> /etc/apt/sources.list'
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D782A00F
 sudo apt-get update
-sudo apt-get install gcdemu cdemu-client cdemu-daemon
+sudo apt-get -y install gcdemu cdemu-client cdemu-daemon
+
+### Graphical disk map
+sudo apt-get -y install gdmap
+
+### htop
+sudo apt-get -y install htop
+
+### ranger
+sudo apt-get -y install ranger
+
+# python pip
+sudo apt-get -y install python-pip python-dev python3-pip python3-dev build-essential 
+sudo pip install --upgrade pip 
+sudo pip install --upgrade virtualenv 
+sudo pip install --upgrade virtualenvwrapper
+sudo pip3 install --upgrade pip 
+sudo pip3 install --upgrade virtualenv 
+sudo pip3 install --upgrade virtualenvwrapper
 
 # https://help.ubuntu.com/community/SwapFaq
 # The default setting in Ubuntu is swappiness=60. 
