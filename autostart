@@ -2,12 +2,17 @@
 
 SCRIPT_PATH=`dirname $0`
 
+unity-settings-daemon &
+# run unity-control-center as
+# XDG_CURRENT_DESKTOP=Unity unity-control-center
+# Or use Mod+u and select (u)nity-control-center
+
 # http://off-topic.sardemff7.net/post/2012/06/21/About-the-GNOME-features-in-an-alternative-environment
 gnome-terminal --role=xterm_scratchpad -e zsh &
 
 nm-applet &
 #wicd-client &
-gnome-sound-applet &
+#gnome-sound-applet &
 volnoti &
 #pidgin &
 skype &
