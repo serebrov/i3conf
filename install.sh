@@ -145,6 +145,10 @@ sudo apt-get -y install htop
 ### ranger
 sudo apt-get -y install ranger
 
+### Sound settings
+# alsa-tools-gui is for hdajackretask
+sudo apt-get install alsa-tools-gui pavucontrol
+
 # python pip
 sudo apt-get -y install python-pip python-dev python3-pip python3-dev build-essential 
 sudo pip install --upgrade pip 
@@ -153,6 +157,17 @@ sudo pip install --upgrade virtualenvwrapper
 sudo pip3 install --upgrade pip 
 sudo pip3 install --upgrade virtualenv 
 sudo pip3 install --upgrade virtualenvwrapper
+
+# docker
+# https://docs.docker.com/engine/installation/linux/ubuntulinux/
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+sudo sh -c 'echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" >> /etc/apt/sources.list.d/docker.list'
+sudo apt-get update
+sudo apt-get -y install docker-engine
+# add current user to the 'docker' group (need to logout / login to take the effect)
+sudo usermod -aG docker $USER
+sudo sh -c 'curl -L https://github.com/docker/compose/releases/download/1.7.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'
+sudo chmod +x /usr/local/bin/docker-compose
 
 # https://help.ubuntu.com/community/SwapFaq
 # The default setting in Ubuntu is swappiness=60. 
