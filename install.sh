@@ -37,9 +37,9 @@ sudo ln -s /usr/lib/jvm/java-7-oracle/jre/lib/amd64/libnpjp2.so /opt/google/chro
 #node
 sudo apt-get -y install nodejs npm nodejs-legacy
 #redis
-sudo apt-get -y install redis-server
+# sudo apt-get -y install redis-server
 #varnish
-sudo apt-get -y install varnish
+# sudo apt-get -y install varnish
 
 #apache, php, mysql
 sudo apt-get -y install apache2
