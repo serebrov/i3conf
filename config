@@ -178,7 +178,7 @@ bindsym $mod+n mode "(s)leep (h)ybernate (p)owersave (r)estart shut(d)own"
 mode  "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center" {
 
         bindsym a exec gnome-terminal --role=xterm_util -e 'alsamixer -c 1'; mode "default"
-        bindsym h exec gnome-terminal --role=xterm_util --geometry=150x48+100+5 -e 'htop'; mode "default"
+        bindsym h exec gnome-terminal --role=xterm_util --geometry=150x48 -e 'htop'; mode "default"
         bindsym p exec pavucontrol; mode "default"
         bindsym u exec XDG_CURRENT_DESKTOP=Unity unity-control-center; mode "default"
 
