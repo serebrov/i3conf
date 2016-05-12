@@ -147,7 +147,7 @@ sudo apt-get -y install ranger
 
 ### Sound settings
 # alsa-tools-gui is for hdajackretask
-sudo apt-get install alsa-tools-gui pavucontrol
+sudo apt-get install alsa-tools-gui pavucontrol gnome-alsamixer
 
 # python pip
 sudo apt-get -y install python-pip python-dev python3-pip python3-dev build-essential 
