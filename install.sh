@@ -168,6 +168,19 @@ sudo apt-get -y install docker-engine
 sudo usermod -aG docker $USER
 sudo sh -c 'curl -L https://github.com/docker/compose/releases/download/1.7.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'
 sudo chmod +x /usr/local/bin/docker-compose
+sudo sh -c 'curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine'
+sudo chmod +x /usr/local/bin/docker-machine
+# switch docker to overlay fs
+sudo modprobe overlay
+# for upstart
+sudo sh -c 'echo "DOCKER_OPTS=\"--storage-driver=overlay\"" >> /etc/default/docker'
+# for systemd, see http://ciplogic.com/index.php/blog/109-docker-with-overlayfs-on-ubuntu-16-04-lts
+sudo CONFIGURATION_FILE=$(systemctl show --property=FragmentPath docker | cut -f2 -d=) \
+     cp $CONFIGURATION_FILE /etc/systemd/system/docker.service
+sudo service docker stop
+sudo perl -pi -e 's/^(ExecStart=.+)$/$1 -s overlay/' /etc/systemd/system/docker.service
+sudo systemctl daemon-reload
+sudo service docker start
 
 # https://help.ubuntu.com/community/SwapFaq
 # The default setting in Ubuntu is swappiness=60. 
