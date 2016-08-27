@@ -7,8 +7,8 @@ sudo apt-get dist-upgrade
 sudo apt-get -y install git-core git-doc git-gui
 # zsh
 sudo apt-get -y install zsh zsh-doc
-# tmux
-sudo apt-get -y install tmux
+# tmux and byobu
+sudo apt-get -y install tmux byobu
 
 # vim
 # https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
@@ -30,28 +30,60 @@ sudo apt-get -y install google-chrome-stable
 # http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
-sudo apt-get -y install oracle-java7-installer
+sudo apt-get -y install oracle-java8-installer
 sudo mkdir /opt/google/chrome/plugins
 sudo ln -s /usr/lib/jvm/java-7-oracle/jre/lib/amd64/libnpjp2.so /opt/google/chrome/plugins/libnpjp2.so
 
-#node
+# python and pip
+sudo apt-get -y install python-pip python-dev python3-pip python3-dev build-essential 
+sudo pip install --upgrade pip 
+sudo pip install --upgrade virtualenv 
+sudo pip install --upgrade virtualenvwrapper
+sudo pip3 install --upgrade pip 
+sudo pip3 install --upgrade virtualenv 
+sudo pip3 install --upgrade virtualenvwrapper
+
+# node and php are useful from the command line
 sudo apt-get -y install nodejs npm nodejs-legacy
+sudo apt-get install php7.0
+
+#apache, php, mysql -> use docker instead
+# sudo apt-get -y install apache2
+# sudo adduser $USER www-data
+# sudo adduser www-data $USER
+# sudo apt-get -y install php5 php5-dev php5-gd php5-curl php5-json php5-mysql php5-xdebug
+# sudo apt-get -y install phpunit phpunit-mock-object phpunit-selenium phpunit-story
+# sudo apt-get -y install mysql-server
 #redis
 # sudo apt-get -y install redis-server
 #varnish
 # sudo apt-get -y install varnish
 
-#apache, php, mysql
-sudo apt-get -y install apache2
-sudo apt-get -y install php5 php5-dev php5-gd php5-curl php5-json php5-mysql php5-xdebug
-sudo apt-get -y install phpunit phpunit-mock-object phpunit-selenium phpunit-story
-sudo apt-get -y install mysql-server
+##### docker
+# https://docs.docker.com/engine/installation/linux/ubuntulinux/
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+sudo sh -c 'echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" >> /etc/apt/sources.list.d/docker.list'
+sudo apt-get update
+sudo apt-get -y install docker-engine
+# add current user to the 'docker' group (need to logout / login to take the effect)
+sudo usermod -aG docker $USER
+sudo sh -c 'curl -L https://github.com/docker/compose/releases/download/1.7.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'
+sudo chmod +x /usr/local/bin/docker-compose
+sudo sh -c 'curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine'
+sudo chmod +x /usr/local/bin/docker-machine
+# switch docker to overlay fs
+sudo modprobe overlay
+# for upstart
+sudo sh -c 'echo "DOCKER_OPTS=\"--storage-driver=overlay\"" >> /etc/default/docker'
+# for systemd, see http://ciplogic.com/index.php/blog/109-docker-with-overlayfs-on-ubuntu-16-04-lts
+sudo CONFIGURATION_FILE=$(systemctl show --property=FragmentPath docker | cut -f2 -d=) \
+     cp $CONFIGURATION_FILE /etc/systemd/system/docker.service
+sudo service docker stop
+sudo perl -pi -e 's/^(ExecStart=.+)$/$1 -s overlay/' /etc/systemd/system/docker.service
+sudo systemctl daemon-reload
+sudo service docker start
 
-sudo adduser $USER www-data
-sudo adduser www-data $USER
-
-
-#i3 + gnome3
+###### i3 + gnome3
 # http://blog.hugochinchilla.net/2013/03/using-gnome-3-with-i3-window-manager/
 sudo echo "deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe" >> /etc/apt/sources.list
 sudo apt-get update
@@ -87,12 +119,17 @@ popd
 git clone https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+# feh - image viewer
+# scrot - make a screenthot (binded to Print key in i3 config)
+# shutter - screenshot tool (binded to Win+Print)
+# gmrun - app runner dialog (Win + G)
 sudo apt-get -y install feh scrot shutter gmrun
 sudo apt-get -y install xbacklight xclip
 
 sudo apt-get -y install dbus
 sudo apt-get -y install libdbus-glib-1-dev
 
+# used to get battery level
 sudo apt-get -y install acpi
 
 # Wicd is an open source wired and wireless network manager for Linux
@@ -101,14 +138,31 @@ sudo apt-get -y install wicd
 # Edit mp3 / ogg tags (use the ~/.i3/tagedit.sh *.mp3 to edit tags in vim)
 sudo apt-get -y install id3v2
 
-#https://github.com/cknadler/vim-anywhere
+# https://github.com/cknadler/vim-anywhere
+# useful to edit text in vim for external apps
+# Win+I (configured in ~/.i3/config) will open vim, write the text, save and close
+# the text will be copied to clipboard and previous app focused
 curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash
 
+### Graphical disk map
+sudo apt-get -y install gdmap
+
+### htop
+sudo apt-get -y install htop
+
+### ranger
+sudo apt-get -y install ranger
+
+### Sound settings
+# alsa-tools-gui is for hdajackretask
+sudo apt-get install alsa-tools-gui pavucontrol gnome-alsamixer
+
+#### Install Volnoti (handles Win + '+' / Win + '-' to control sound level)
 cd ~
 git clone git://github.com/davidbrazdil/volnoti.git
 cd volnoti
 
-# handle error, see http://ubuntuforums.org/showthread.php?t=2215264
+# handle volnoti error, see http://ubuntuforums.org/showthread.php?t=2215264
 cd src
 rm value-client-stub.h && make value-client-stub.h 
 dbus-binding-tool --prefix=volume_object --mode=glib-client \
@@ -136,51 +190,6 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D782A00F
 sudo apt-get update
 sudo apt-get -y install gcdemu cdemu-client cdemu-daemon
 
-### Graphical disk map
-sudo apt-get -y install gdmap
-
-### htop
-sudo apt-get -y install htop
-
-### ranger
-sudo apt-get -y install ranger
-
-### Sound settings
-# alsa-tools-gui is for hdajackretask
-sudo apt-get install alsa-tools-gui pavucontrol gnome-alsamixer
-
-# python pip
-sudo apt-get -y install python-pip python-dev python3-pip python3-dev build-essential 
-sudo pip install --upgrade pip 
-sudo pip install --upgrade virtualenv 
-sudo pip install --upgrade virtualenvwrapper
-sudo pip3 install --upgrade pip 
-sudo pip3 install --upgrade virtualenv 
-sudo pip3 install --upgrade virtualenvwrapper
-
-# docker
-# https://docs.docker.com/engine/installation/linux/ubuntulinux/
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-sudo sh -c 'echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" >> /etc/apt/sources.list.d/docker.list'
-sudo apt-get update
-sudo apt-get -y install docker-engine
-# add current user to the 'docker' group (need to logout / login to take the effect)
-sudo usermod -aG docker $USER
-sudo sh -c 'curl -L https://github.com/docker/compose/releases/download/1.7.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'
-sudo chmod +x /usr/local/bin/docker-compose
-sudo sh -c 'curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine'
-sudo chmod +x /usr/local/bin/docker-machine
-# switch docker to overlay fs
-sudo modprobe overlay
-# for upstart
-sudo sh -c 'echo "DOCKER_OPTS=\"--storage-driver=overlay\"" >> /etc/default/docker'
-# for systemd, see http://ciplogic.com/index.php/blog/109-docker-with-overlayfs-on-ubuntu-16-04-lts
-sudo CONFIGURATION_FILE=$(systemctl show --property=FragmentPath docker | cut -f2 -d=) \
-     cp $CONFIGURATION_FILE /etc/systemd/system/docker.service
-sudo service docker stop
-sudo perl -pi -e 's/^(ExecStart=.+)$/$1 -s overlay/' /etc/systemd/system/docker.service
-sudo systemctl daemon-reload
-sudo service docker start
 
 # https://help.ubuntu.com/community/SwapFaq
 # The default setting in Ubuntu is swappiness=60. 
