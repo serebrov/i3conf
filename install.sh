@@ -91,6 +91,7 @@ sudo apt-get --allow-unauthenticated install sur5r-keyring
 sudo apt-get update
 sudo apt-get -y install gnome-session gnome-settings-daemon gnome-panel i3
 sudo apt-get -y install classicmenu-indicator feh curl
+sudo chmod +x ~/.i3/autostart
 
 #renameutils - Programs to make file renaming easier
 #http://www.nongnu.org/renameutils/
@@ -133,7 +134,7 @@ sudo apt-get -y install libdbus-glib-1-dev
 sudo apt-get -y install acpi
 
 # Wicd is an open source wired and wireless network manager for Linux
-sudo apt-get -y install wicd
+#sudo apt-get -y install wicd
 
 # Edit mp3 / ogg tags (use the ~/.i3/tagedit.sh *.mp3 to edit tags in vim)
 sudo apt-get -y install id3v2
@@ -198,4 +199,4 @@ sudo apt-get -y install gcdemu cdemu-client cdemu-daemon
 # 
 # That's great, recommended value is 10 and default is 60
 # My machine works much better with 10
-echo "vm.swappiness=10" | sudo sh -c 'cat >> /etc/sysctl.conf'
+# echo "vm.swappiness=10" | sudo sh -c 'cat >> /etc/sysctl.conf'
