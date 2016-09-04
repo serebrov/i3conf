@@ -36,9 +36,9 @@ sudo ln -s /usr/lib/jvm/java-7-oracle/jre/lib/amd64/libnpjp2.so /opt/google/chro
 
 # python and pip
 sudo apt-get -y install python-pip python-dev python3-pip python3-dev build-essential 
-sudo pip install --upgrade pip 
-sudo pip install --upgrade virtualenv 
-sudo pip install --upgrade virtualenvwrapper
+sudo pip2 install --upgrade pip 
+sudo pip2 install --upgrade virtualenv 
+sudo pip2 install --upgrade virtualenvwrapper
 sudo pip3 install --upgrade pip 
 sudo pip3 install --upgrade virtualenv 
 sudo pip3 install --upgrade virtualenvwrapper
@@ -92,6 +92,9 @@ sudo apt-get update
 sudo apt-get -y install gnome-session gnome-settings-daemon gnome-panel i3
 sudo apt-get -y install classicmenu-indicator feh curl
 sudo chmod +x ~/.i3/autostart
+# nautilus - don't launch desktop
+gsettings set org.gnome.desktop.background show-desktop-icons false
+ln -s ~/.i3/.i3status.conf ~/.i3status.conf
 
 #renameutils - Programs to make file renaming easier
 #http://www.nongnu.org/renameutils/

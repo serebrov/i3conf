@@ -2,7 +2,7 @@
 
 # see
 # http://blog.hugochinchilla.net/2013/03/using-gnome-3-with-i3-window-manager/
-apt-get install gnome-session gnome-settings-daemon gnome-panel i3
+# apt-get install gnome-session gnome-settings-daemon gnome-panel i3
 
 # https://faq.i3wm.org/question/346/how-can-i-use-i3-in-gnome-2-de/
 # http://askubuntu.com/questions/26115/i3-wm-with-auto-internet-connectivity-and-a-gnome-panel
