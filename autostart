@@ -22,5 +22,5 @@ volnoti &
 #setxkbmap us,ru -option "grp:caps_toggle,grp_led:scroll" -option compose:menu
 $SCRIPT_PATH/keyboard-setup.sh
 
-cronfile=$SCRIPT_PATH/scripts/battery-info.cron.txt
-crontab -l | grep -v "battery-info.sh" | { cat; cat $cronfile; } | crontab -
+#cronfile=$SCRIPT_PATH/scripts/battery-info.cron.txt
+#crontab -l | grep -v "battery-info.sh" | { cat; cat $cronfile; } | crontab -
