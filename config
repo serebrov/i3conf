@@ -193,15 +193,27 @@ bar {
         #mode hide
         mode dock
         #modifier $mod
-        status_command i3status --config ~/.i3/.i3status.conf
+        status_command ~/.i3/i3status-plus.py
+        # position          bottom
+        # mode              dock
+        # workspace_buttons yes
+        # tray_output       primary
         colors {
-            # solarized
-            background #073642
-            statusline #eee8d5
-            focused_workspace #cb4b16 #cb4b16 #eee8d5
-            active_workspace #cb4b16 #cb4b16 #eee8d5
-            inactive_workspace #b58900 #b58900 #eee8d5
+            background #000000
+            statusline #999999
+            focused_workspace  #ffffff #285577
+            active_workspace   #ffffff #333333
+            inactive_workspace #888888 #222222
+            urgent_workspace   #ffffff #900000
         }
+        # colors {
+        #     # solarized
+        #     background #073642
+        #     statusline #eee8d5
+        #     focused_workspace #cb4b16 #cb4b16 #eee8d5
+        #     active_workspace #cb4b16 #cb4b16 #eee8d5
+        #     inactive_workspace #b58900 #b58900 #eee8d5
+        # }
 }
 
 ### Additional settings
