@@ -1,0 +1,4 @@
+[GNOME Session]
+Name=i3-gnome-v
+RequiredComponents=unity-settings-daemon;i3-gnome-v;
+DesktopName=Unity

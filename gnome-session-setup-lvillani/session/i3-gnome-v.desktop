@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=i3-gnome-v
+NoDisplay=true
+Comment=improved dynamic tiling window manager
+Exec=i3-gnome-v
+X-GNOME-WMName=i3-gnome-v
+X-GNOME-Autostart-Phase=WindowManager
+X-GNOME-Provides=windowmanager
+X-GNOME-Autostart-Notify=false
