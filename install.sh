@@ -89,7 +89,7 @@ sudo echo "deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe" >> /et
 sudo apt-get update
 sudo apt-get --allow-unauthenticated install sur5r-keyring
 sudo apt-get update
-sudo apt-get -y install gnome-session gnome-settings-daemon gnome-panel i3
+sudo apt-get -y install gnome-session gnome-panel i3
 sudo apt-get -y install classicmenu-indicator feh curl
 sudo chmod +x ~/.i3/autostart
 # nautilus - don't launch desktop
