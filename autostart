@@ -2,22 +2,18 @@
 
 SCRIPT_PATH=`dirname $0`
 
-unity-settings-daemon &
-# run unity-control-center as
-# XDG_CURRENT_DESKTOP=Unity unity-control-center
-# Or use Mod+u and select (u)nity-control-center
+# it now starts with the session (see gnome-session-setup-lvillani/)
+#unity-settings-daemon &
 
 # http://off-topic.sardemff7.net/post/2012/06/21/About-the-GNOME-features-in-an-alternative-environment
 gnome-terminal --role=xterm_scratchpad -e zsh &
 
-nm-applet &
-#wicd-client &
-#gnome-sound-applet &
+# Note: for some reason the nm-applet icon is not showing now in the tray area, switch to wicd
+#nm-applet &
+wicd-client &
+update-notifier &
 volnoti &
-#pidgin &
-#skype &
 ~/deadbeef/deadbeef &
-#rescuetime &
 
 #setxkbmap us,ru -option "grp:caps_toggle,grp_led:scroll" -option compose:menu
 $SCRIPT_PATH/keyboard-setup.sh
