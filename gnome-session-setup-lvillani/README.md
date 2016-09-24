@@ -1,4 +1,5 @@
-This is the setup based on https://github.com/lvillani/i3-gnome
+This is the setup based on 
+https://github.com/lvillani/i3-gnome
 
 Install with:
 
