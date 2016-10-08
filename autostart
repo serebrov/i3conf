@@ -5,12 +5,28 @@ SCRIPT_PATH=`dirname $0`
 # it now starts with the session (see gnome-session-setup-lvillani/)
 #unity-settings-daemon &
 
+# Note: to remove the bottom panel, run:
+#     # check the list of pannels
+#     gsettings get org.gnome.gnome-panel.layout toplevel-id-list
+#     ['top-panel', 'bottom-panel']
+#     # remove bottom panel
+#     gsettings set org.gnome.gnome-panel.layout toplevel-id-list "['top-panel']"
+# And to restore it, run
+#     gsettings set org.gnome.gnome-panel.layout toplevel-id-list "['top-panel', 'bottom-panel']"
+#
+# In general, it makes sense whether to keep the bottom paned or i3status, so alternative is to 
+# hide the i3status (just comment out bar {...} settings in the i3 config)
+#
+# gnome-panel is needed because with current session setup the nm-applet and some other icons are not
+# shown in the i3status bar, the only workaround I found for now is to also run the gnome-panel
+gnome-panel&
+
 # http://off-topic.sardemff7.net/post/2012/06/21/About-the-GNOME-features-in-an-alternative-environment
 gnome-terminal --role=xterm_scratchpad -e zsh &
 
 # Note: for some reason the nm-applet icon is not showing now in the tray area, switch to wicd
-#nm-applet &
-wicd-client &
+nm-applet &
+#wicd-client &
 update-notifier &
 volnoti &
 ~/deadbeef/deadbeef &
