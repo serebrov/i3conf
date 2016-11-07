@@ -19,6 +19,8 @@ SCRIPT_PATH=`dirname $0`
 #
 # gnome-panel is needed because with current session setup the nm-applet and some other icons are not
 # shown in the i3status bar, the only workaround I found for now is to also run the gnome-panel
+#
+# There is also a shortcut to show/hide the top panel - $mod+p
 gnome-panel&
 
 # http://off-topic.sardemff7.net/post/2012/06/21/About-the-GNOME-features-in-an-alternative-environment

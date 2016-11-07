@@ -175,7 +175,7 @@ mode  "(s)leep (h)ybernate (p)owersave (r)estart shut(d)own" {
 }
 bindsym $mod+n mode "(s)leep (h)ybernate (p)owersave (r)estart shut(d)own"
 
-mode  "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center (r)elod audio system" {
+mode  "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center (r)elod audio system (n)etwork-manager restart" {
 
         bindsym a exec gnome-terminal --role=xterm_util -e 'alsamixer -c 1'; mode "default"
         bindsym h exec gnome-terminal --role=xterm_util --geometry=150x48 -e 'htop'; mode "default"
@@ -184,11 +184,13 @@ mode  "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center (r)elod aud
         # r - reload audio system, can be useful when switching USB audio input/output devices 
         # see http://askubuntu.com/questions/230888
         bindsym r exec pulseaudio -k && sudo alsa force-reload; mode "default"
+        # n - reload network manager
+        bindsym n exec sudo service network-manager restart; mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+u mode "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center (r)elod audio system"
+bindsym $mod+u mode "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center (r)elod audio system (n)etwork-manager restart"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -271,7 +273,9 @@ bindsym $mod+Print exec shutter
 # Gmrun (sudo apt-get install gmrun)
 bindsym $mod+g exec gmrun
 # Also Gmrun just to disable mod+p (it switches monitors off)
-bindsym $mod+p exec gmrun
+# bindsym $mod+p exec gmrun
+# Show hide the gnome-panel
+bindsym $mod+p exec gsettings get org.gnome.gnome-panel.layout toplevel-id-list | grep top-panel && gsettings set org.gnome.gnome-panel.layout toplevel-id-list "[]" || gsettings set org.gnome.gnome-panel.layout toplevel-id-list "['top-panel']"
 
 # http://faq.i3wm.org/question/125/how-to-change-the-systems-volume/
 #bindsym $mod+KP_Add exec amixer -q set Master 2dB+ unmute
