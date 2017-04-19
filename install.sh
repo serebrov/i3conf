@@ -8,7 +8,11 @@ sudo apt-get -y install git-core git-doc git-gui
 # zsh
 sudo apt-get -y install zsh zsh-doc
 # tmux and byobu
-sudo apt-get -y install tmux byobu
+sudo apt-get -y install tmux # byobu
+# log navigation
+sudo apt-get -y install lnav
+# disk space analyzer
+sudo apt-get -y install ncdu
 
 # vim
 # https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
@@ -129,6 +133,10 @@ git clone https://github.com/junegunn/fzf.git ~/.fzf
 # gmrun - app runner dialog (Win + G)
 sudo apt-get -y install feh scrot shutter gmrun
 sudo apt-get -y install xbacklight xclip
+
+# byzanz-record --delay=2 --duration=30 screencast.gif - record a screencast to gif
+# byzanz-record --duration=15 --x=200 --y=300 --width=700 --height=400 - record specific area
+sudo apt-get -y install byzanz
 
 sudo apt-get -y install dbus
 sudo apt-get -y install libdbus-glib-1-dev
