@@ -3,11 +3,13 @@
 SCRIPT_PATH=`dirname $0`
 
 #xrandr --dpi 220
-xrandr --output DP2-1 --scale .75x.75
+# xrandr --output DP-1-2-1 --scale 1.75x1.75 --dpi 220
+# xrandr --output eDP-1-1 --dpi 220
+# xrandr --output eDP-1-1 --scale 2.0x2.0
 
 
 # it now starts with the session (see gnome-session-setup-lvillani/)
-#unity-settings-daemon &
+unity-settings-daemon &
 
 # Note: to remove the bottom panel, run:
 #     # check the list of pannels
@@ -25,10 +27,12 @@ xrandr --output DP2-1 --scale .75x.75
 # shown in the i3status bar, the only workaround I found for now is to also run the gnome-panel
 #
 # There is also a shortcut to show/hide the top panel - $mod+p
-gnome-panel&
+# gnome-panel&
 
 # http://off-topic.sardemff7.net/post/2012/06/21/About-the-GNOME-features-in-an-alternative-environment
-gnome-terminal --role=xterm_scratchpad -e zsh &
+# gnome-terminal --role=xterm_scratchpad -e zsh &
+konsole --title=termscratch --hide-menubar --hide-tabbar -e zsh &
+# uxterm -class UXTerm -title UXTermScratch -u8 "$@" -fa "Iosevka Medium:size=9" tmux
 
 # Note: for some reason the nm-applet icon is not showing now in the tray area, switch to wicd
 nm-applet &

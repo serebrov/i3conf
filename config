@@ -12,7 +12,8 @@
 set $mod Mod4
 
 # font for window titles. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:DejaVu Sans Mono 13
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -21,7 +22,8 @@ floating_modifier $mod
 bindsym $mod+0 exec i3 bar mode toggle
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec konsole --hide-menubar --hide-tabbar
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -177,8 +179,8 @@ bindsym $mod+n mode "(s)leep (h)ybernate (p)owersave (r)estart shut(d)own"
 
 mode  "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center (r)elod audio system (n)etwork-manager restart" {
 
-        bindsym a exec gnome-terminal --role=xterm_util -e 'alsamixer -c 1'; mode "default"
-        bindsym h exec gnome-terminal --role=xterm_util --geometry=150x48 -e 'htop'; mode "default"
+        bindsym a exec konsole --role=xterm_util -e 'alsamixer -c 1'; mode "default"
+        bindsym h exec konsole --role=xterm_util --geometry=150x48 -e 'htop'; mode "default"
         bindsym p exec pavucontrol; mode "default"
         bindsym u exec XDG_CURRENT_DESKTOP=Unity unity-control-center; mode "default"
         # r - reload audio system, can be useful when switching USB audio input/output devices 
@@ -241,7 +243,7 @@ assign [class="^Psensor$"] 2
 assign [class="^Empathy$"] 3
 assign [class="^Pidgin$"] 5
 assign [class="^Skype$"] 5
-assign [class="^Firefox$"] 4
+# assign [class="^Firefox$"] 4
 # assign [class="^URxvt$" instance="^mail$"] 4
 # assign [title="Lingea Lexicon 5$"] 8
 
@@ -253,7 +255,10 @@ for_window [class="^Nautilus$" instance="^file_progress$"] floating enable
 for_window [class="^Gmrun$" instance="^gmrun$"] floating enable
 #for_window [class="^SkypeTab$" instance="^SkypeTab$"] focus; move up; resize shrink down 30 px or 30 ppt; workspace 1: desktop
 for_window [class="^Gnome-terminal$"] border none
+for_window [class="^Konsole$"] border none
 for_window [window_role="xterm_scratchpad"] border 1pixel, move scratchpad
+for_window [title="UXTermScratch"] border 1pixel, move scratchpad
+for_window [title="termscratch"] border 1pixel, move scratchpad
 for_window [window_role="xterm_util"] floating enable, border none
 for_window [window_role="popup_editor"] border none, floating enable
 for_window [class="^Google-chrome$"] border none
@@ -264,6 +269,8 @@ for_window [class="urxvt"] border none
 for_window [title="Wicd Network Manager"] floating enable, border normal
 for_window [title="- Shutter"] floating enable, border normal
 for_window [title="Only If"] floating enable
+for_window [class="^Anki$"] floating enable
+for_window [class="keepassxc"] floating enable; border none
 
 # Screenshot:
 bindsym Print exec scrot 'f%Y-%m-%d-%s_$wx$h.png' -e 'mv $f /home/seb/'
@@ -307,3 +314,5 @@ client.unfocused        #333333 #93a1a1 #fdf6e3 #292d2e
 
 # autostart
 exec ~/.i3/autostart
+exec --no-startup-id wmctrl -c Plasma
+# exec --no-startup-id unity-settings-daemon &
