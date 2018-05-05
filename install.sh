@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 sudo apt-get update
 sudo apt-get dist-upgrade
@@ -201,6 +201,15 @@ sudo sh -c 'echo "deb-src http://ppa.launchpad.net/cdemu/ppa/ubuntu trusty main"
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D782A00F
 sudo apt-get update
 sudo apt-get -y install gcdemu cdemu-client cdemu-daemon
+
+
+# https://www.passwordstore.org/
+sudo apt-get install pass
+
+#KeePassXC
+sudo add-apt-repository -y ppa:phoerious/keepassxc
+sudo apt-get update
+sudo apt-get install -y keepassxc
 
 
 # https://help.ubuntu.com/community/SwapFaq
