@@ -9,7 +9,33 @@ SCRIPT_PATH=`dirname $0`
 
 
 # it now starts with the session (see gnome-session-setup-lvillani/)
-unity-settings-daemon &
+# unity-settings-daemon &
+
+
+/usr/lib/gnome-settings-daemon/gsd-xsettings &
+# /usr/lib/gnome-settings-daemon/gsd-a11y-settings &
+# /usr/lib/gnome-settings-daemon/gsd-clipboard &
+# /usr/lib/gnome-settings-daemon/gsd-color &
+# /usr/lib/gnome-settings-daemon/gsd-datetime &
+# /usr/lib/gnome-settings-daemon/gsd-housekeeping &
+# /usr/lib/gnome-settings-daemon/gsd-keyboard &
+# /usr/lib/gnome-settings-daemon/gsd-media-keys &
+# /usr/lib/gnome-settings-daemon/gsd-mouse &
+# /usr/lib/gnome-settings-daemon/gsd-power &
+# /usr/lib/gnome-settings-daemon/gsd-print-notifications &
+# /usr/lib/gnome-settings-daemon/gsd-rfkill &
+# /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy &
+# /usr/lib/gnome-settings-daemon/gsd-sharing &
+# /usr/lib/gnome-settings-daemon/gsd-smartcard &
+# /usr/lib/gnome-settings-daemon/gsd-sound &
+# /usr/lib/gnome-settings-daemon/gsd-wacom &
+# /usr/lib/gnome-settings-daemon/gsd-printer &
+
+# /usr/bin/gnome-software --gapplication-service
+/usr/lib/gnome-disk-utility/gsd-disk-utility-notify &
+
+gnome-power-manager &
+gnome-flashback &
 
 # Note: to remove the bottom panel, run:
 #     # check the list of pannels
@@ -30,16 +56,16 @@ unity-settings-daemon &
 # gnome-panel&
 
 # http://off-topic.sardemff7.net/post/2012/06/21/About-the-GNOME-features-in-an-alternative-environment
-# gnome-terminal --role=xterm_scratchpad -e zsh &
-konsole --title=termscratch --hide-menubar --hide-tabbar -e zsh &
+gnome-terminal --role=xterm_scratchpad -e zsh &
+# konsole --title=termscratch --hide-menubar --hide-tabbar -e zsh &
 # uxterm -class UXTerm -title UXTermScratch -u8 "$@" -fa "Iosevka Medium:size=9" tmux
 
 # Note: for some reason the nm-applet icon is not showing now in the tray area, switch to wicd
 nm-applet &
 #wicd-client &
 update-notifier &
-volnoti &
-~/deadbeef/deadbeef &
+# volnoti &
+# ~/deadbeef/deadbeef &
 
 #setxkbmap us,ru -option "grp:caps_toggle,grp_led:scroll" -option compose:menu
 $SCRIPT_PATH/keyboard-setup.sh

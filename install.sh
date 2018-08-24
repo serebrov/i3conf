@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get dist-upgrade
 
 # git
-sudo apt-get -y install git-core git-doc git-gui
+sudo apt-get -y install curl git-core git-doc git-gui
 # zsh
 sudo apt-get -y install zsh zsh-doc
 # tmux and byobu
@@ -12,15 +12,15 @@ sudo apt-get -y install tmux # byobu
 # log navigation
 sudo apt-get -y install lnav
 # disk space analyzer
-sudo apt-get -y install ncdu
+# sudo apt-get -y install ncdu
 
 # vim
 # https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
-sudo apt-get -y install libncurses5-dev libgnome2-dev libgnomeui-dev \
-libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
-libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev mercurial
-sudo apt-get -y install checkinstall
-sudo apt-get -y install ctags cmake
+# sudo apt-get -y install libncurses5-dev libgnome2-dev libgnomeui-dev \
+# libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
+# libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev mercurial
+# sudo apt-get -y install checkinstall
+# sudo apt-get -y install ctags cmake
 
 # google chrome
 # http://www.howopensource.com/2011/10/install-google-chrome-in-ubuntu-11-10-11-04-10-10-10-04/
@@ -48,8 +48,8 @@ sudo pip3 install --upgrade virtualenv
 sudo pip3 install --upgrade virtualenvwrapper
 
 # node and php are useful from the command line
-sudo apt-get -y install nodejs npm nodejs-legacy
-sudo apt-get install php7.0
+# sudo apt-get -y install nodejs npm nodejs-legacy
+# sudo apt-get install php7.0
 
 #apache, php, mysql -> use docker instead
 # sudo apt-get -y install apache2
@@ -65,39 +65,33 @@ sudo apt-get install php7.0
 
 ##### docker
 # https://docs.docker.com/engine/installation/linux/ubuntulinux/
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-sudo sh -c 'echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" >> /etc/apt/sources.list.d/docker.list'
+sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
-sudo apt-get -y install docker-engine
-# add current user to the 'docker' group (need to logout / login to take the effect)
-sudo usermod -aG docker $USER
-sudo sh -c 'curl -L https://github.com/docker/compose/releases/download/1.7.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose'
-sudo chmod +x /usr/local/bin/docker-compose
-sudo sh -c 'curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine'
-sudo chmod +x /usr/local/bin/docker-machine
-# switch docker to overlay fs
-sudo modprobe overlay
-# for upstart
-sudo sh -c 'echo "DOCKER_OPTS=\"--storage-driver=overlay\"" >> /etc/default/docker'
-# for systemd, see http://ciplogic.com/index.php/blog/109-docker-with-overlayfs-on-ubuntu-16-04-lts
-sudo CONFIGURATION_FILE=$(systemctl show --property=FragmentPath docker | cut -f2 -d=) \
-     cp $CONFIGURATION_FILE /etc/systemd/system/docker.service
-sudo service docker stop
-sudo perl -pi -e 's/^(ExecStart=.+)$/$1 -s overlay/' /etc/systemd/system/docker.service
-sudo systemctl daemon-reload
-sudo service docker start
+sudo apt-get -y install docker-ce
 
 ###### i3 + gnome3
 # http://blog.hugochinchilla.net/2013/03/using-gnome-3-with-i3-window-manager/
-sudo echo "deb http://debian.sur5r.net/i3/ $(lsb_release -c -s) universe" >> /etc/apt/sources.list
-sudo apt-get update
-sudo apt-get --allow-unauthenticated install sur5r-keyring
-sudo apt-get update
-sudo apt-get -y install gnome-session gnome-panel i3
-sudo apt-get -y install classicmenu-indicator feh curl
+
+sudo /usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2018.01.30_all.deb keyring.deb SHA256:baa43dbbd7232ea2b5444cae238d53bebb9d34601cc000e82f11111b1889078a
+sudo dpkg -i ./keyring.deb
+sudo echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" >> /etc/apt/sources.list.d/sur5r-i3.list
+sudo apt update
+sudo apt -y install i3
+
+pushd ~/
+  # gnome+i3 session
+  git clone https://github.com/csxr/i3-gnome.git
+  cd i3-gnome
+  sudo make install
+popd
+
+# sudo apt-get -y install classicmenu-indicator
+
 sudo chmod +x ~/.i3/autostart
 # nautilus - don't launch desktop
-gsettings set org.gnome.desktop.background show-desktop-icons false
+# gsettings set org.gnome.desktop.background show-desktop-icons false
 ln -s ~/.i3/.i3status.conf ~/.i3status.conf
 
 #renameutils - Programs to make file renaming easier
@@ -138,23 +132,23 @@ sudo apt-get -y install xbacklight xclip
 # byzanz-record --duration=15 --x=200 --y=300 --width=700 --height=400 - record specific area
 sudo apt-get -y install byzanz
 
-sudo apt-get -y install dbus
-sudo apt-get -y install libdbus-glib-1-dev
+# sudo apt-get -y install dbus
+# sudo apt-get -y install libdbus-glib-1-dev
 
-# used to get battery level
+# to get battery level: acpi -V
 sudo apt-get -y install acpi
 
 # Wicd is an open source wired and wireless network manager for Linux
 #sudo apt-get -y install wicd
 
 # Edit mp3 / ogg tags (use the ~/.i3/tagedit.sh *.mp3 to edit tags in vim)
-sudo apt-get -y install id3v2
+# sudo apt-get -y install id3v2
 
 # https://github.com/cknadler/vim-anywhere
 # useful to edit text in vim for external apps
 # Win+I (configured in ~/.i3/config) will open vim, write the text, save and close
 # the text will be copied to clipboard and previous app focused
-curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash
+# curl -fsSL https://raw.github.com/cknadler/vim-anywhere/master/install | bash
 
 ### Graphical disk map
 sudo apt-get -y install gdmap
@@ -170,41 +164,41 @@ sudo apt-get -y install ranger
 sudo apt-get install alsa-tools-gui pavucontrol gnome-alsamixer
 
 #### Install Volnoti (handles Win + '+' / Win + '-' to control sound level)
-cd ~
-git clone git://github.com/davidbrazdil/volnoti.git
-cd volnoti
+# cd ~
+# git clone git://github.com/davidbrazdil/volnoti.git
+# cd volnoti
 
 # handle volnoti error, see http://ubuntuforums.org/showthread.php?t=2215264
-cd src
-rm value-client-stub.h && make value-client-stub.h 
-dbus-binding-tool --prefix=volume_object --mode=glib-client \
-      specs.xml > value-client-stub.h
-rm value-daemon-stub.h && make value-daemon-stub.h 
-dbus-binding-tool --prefix=volume_object --mode=glib-server \
-      specs.xml > value-daemon-stub.h
-cd ..
+# cd src
+# rm value-client-stub.h && make value-client-stub.h 
+# dbus-binding-tool --prefix=volume_object --mode=glib-client \
+#       specs.xml > value-client-stub.h
+# rm value-daemon-stub.h && make value-daemon-stub.h 
+# dbus-binding-tool --prefix=volume_object --mode=glib-server \
+#       specs.xml > value-daemon-stub.h
+# cd ..
 #Let Autotools create the configuration scripts:
-./prepare.sh
+# ./prepare.sh
 #Then just follow the basic GNU routine:
-./configure --prefix=/usr
-make
-sudo make install
+# ./configure --prefix=/usr
+# make
+# sudo make install
 #You can have the .tar.gz source archive prepared simply by calling a provided script:
 #./package.sh
 
 ### ISO, MDF, etc
 # Simple
-sudo apt-get -y install furiusisomount 
+# sudo apt-get -y install furiusisomount 
 # Full-featured, no version for ubuntu 14.10 in the ppa yet
-sudo sh -c 'echo "deb http://ppa.launchpad.net/cdemu/ppa/ubuntu trusty main" >> /etc/apt/sources.list'
-sudo sh -c 'echo "deb-src http://ppa.launchpad.net/cdemu/ppa/ubuntu trusty main" >> /etc/apt/sources.list'
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D782A00F
-sudo apt-get update
-sudo apt-get -y install gcdemu cdemu-client cdemu-daemon
+# sudo sh -c 'echo "deb http://ppa.launchpad.net/cdemu/ppa/ubuntu trusty main" >> /etc/apt/sources.list'
+# sudo sh -c 'echo "deb-src http://ppa.launchpad.net/cdemu/ppa/ubuntu trusty main" >> /etc/apt/sources.list'
+# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D782A00F
+# sudo apt-get update
+# sudo apt-get -y install gcdemu cdemu-client cdemu-daemon
 
 
 # https://www.passwordstore.org/
-sudo apt-get install pass
+# sudo apt-get install pass
 
 #KeePassXC
 sudo add-apt-repository -y ppa:phoerious/keepassxc
