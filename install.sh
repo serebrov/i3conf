@@ -71,6 +71,10 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update
 sudo apt-get -y install docker-ce
 
+# Allow to use docker without sudo, logout/login or reboot to make it work
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
 ###### i3 + gnome3
 # http://blog.hugochinchilla.net/2013/03/using-gnome-3-with-i3-window-manager/
 
