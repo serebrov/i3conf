@@ -14,13 +14,17 @@ sudo apt-get -y install lnav
 # disk space analyzer
 # sudo apt-get -y install ncdu
 
+# https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux
+sudo ubuntu-drivers autoinstall
+
 # vim
 # https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
 # sudo apt-get -y install libncurses5-dev libgnome2-dev libgnomeui-dev \
 # libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
 # libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev mercurial
 # sudo apt-get -y install checkinstall
-# sudo apt-get -y install ctags cmake
+# sudo apt-get -y install cmake
+sudo apt-get -y install exuberant-ctags
 
 # google chrome
 # http://www.howopensource.com/2011/10/install-google-chrome-in-ubuntu-11-10-11-04-10-10-10-04/
@@ -82,7 +86,8 @@ sudo /usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/
 sudo dpkg -i ./keyring.deb
 sudo echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" >> /etc/apt/sources.list.d/sur5r-i3.list
 sudo apt update
-sudo apt -y install i3
+# gnome-flashback is needed in 18.04, see https://github.com/csxr/i3-gnome/wiki/Tips-&-Tricks
+sudo apt -y install i3 gnome-flashback
 
 pushd ~/
   # gnome+i3 session
@@ -127,10 +132,23 @@ git clone https://github.com/junegunn/fzf.git ~/.fzf
 
 # feh - image viewer
 # scrot - make a screenthot (binded to Print key in i3 config)
-# shutter - screenshot tool (binded to Win+Print)
 # gmrun - app runner dialog (Win + G)
-sudo apt-get -y install feh scrot shutter gmrun
+sudo apt-get -y install feh scrot gmrun
 sudo apt-get -y install xbacklight xclip
+
+# shutter - screenshot tool (binded to Win+Print)
+sudo apt-get -y install shutter
+# The shutter dependency that is missing in Ubuntu 18.04 repositories
+mkdir ~/libgoo-canvas-perl
+pushd ~/libgoo-canvas-perl
+wget http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgoo-canvas-perl/libgoo-canvas-perl_0.06-2ubuntu3_amd64.deb
+wget http://archive.ubuntu.com/ubuntu/pool/universe/libe/libextutils-depends-perl/libextutils-depends-perl_0.405-1_all.deb
+wget http://archive.ubuntu.com/ubuntu/pool/universe/libe/libextutils-pkgconfig-perl/libextutils-pkgconfig-perl_1.15-1_all.deb
+wget http://archive.ubuntu.com/ubuntu/pool/universe/g/goocanvas/libgoocanvas3_1.0.0-1_amd64.deb
+wget http://archive.ubuntu.com/ubuntu/pool/universe/g/goocanvas/libgoocanvas-common_1.0.0-1_all.deb
+sudo dpkg -i *.deb
+sudo apt install -f
+popd
 
 # byzanz-record --delay=2 --duration=30 screencast.gif - record a screencast to gif
 # byzanz-record --duration=15 --x=200 --y=300 --width=700 --height=400 - record specific area
