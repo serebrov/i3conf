@@ -19,30 +19,28 @@
 //      https://github.com/adobe-fonts/source-code-pro
 //      https://github.com/nathco/Office-Code-Pro
 //
-// hasklig - also based on source code pro, 
+// hasklig - also based on source code pro,
 //           comparing to fira code - smaller letter height, bigger spacing
 //
 // To install font:
 //   sudo apt install fonts-fontname
 //
 // if font is not present in repos - download (or git clone) to ~/.fonts and run `fc-cache -f -v`
+//
+// Tool to view fonts: https://app.programmingfonts.org
 
-console.log "oO08 iIlL1 g9qCGQ ~-+=>";
+console.log(["oO08 iIlL1 g9qCGQ ~-+=>"]);
 
 function updateGutters(cm) {
     var gutters = cm.display.gutters,
-          specs = cm.options.gutters;
+        specs = cm.options.gutters;
 
     removeChildren(gutters);
 
     for (var i = 0; i < specs.length; ++i) {
         var gutterClass = specs[i];
         var gElt = gutters.appendChild(
-            elt(
-                "div",
-                null,
-                "CodeMirror-gutter " + gutterClass
-            )
+            elt("div", null, "CodeMirror-gutter " + gutterClass)
         );
         if (gutterClass == "CodeMirror-linenumbers") {
             cm.display.lineGutter = gElt;
