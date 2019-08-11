@@ -14,6 +14,14 @@ sudo apt-get -y install lnav
 # disk space analyzer
 # sudo apt-get -y install ncdu
 
+# Fira Mono font
+mkdir -p ~/.fonts
+cp -r ~/.i3/fonts/* ~/.fonts
+fc-cache -f -v
+
+sudo apt-get -y install fonts-firacode
+# sudo apt install fonts-dejavu fonts-hack fonts-mona fonts-monoid fonts-mononoki fonts-roboto fonts-tlwg-mono
+
 # https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux
 sudo ubuntu-drivers autoinstall
 
