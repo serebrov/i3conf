@@ -34,6 +34,8 @@ sudo ubuntu-drivers autoinstall
 # sudo apt-get -y install cmake
 sudo apt-get -y install exuberant-ctags
 
+sudo apt-get -y install kdiff3 konsole
+
 # google chrome
 # http://www.howopensource.com/2011/10/install-google-chrome-in-ubuntu-11-10-11-04-10-10-10-04/
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
