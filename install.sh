@@ -36,6 +36,12 @@ sudo apt-get -y install exuberant-ctags
 
 sudo apt-get -y install kdiff3 konsole
 
+# Redshift adjusts the color temperature of your screen according to your surroundings.
+# This may help your eyes hurt less if you are working in front of the screen at night.
+# https://github.com/jonls/redshift
+# Example: redshift -v -l geoclue2
+sudo apt-get -y install redshift
+
 # google chrome
 # http://www.howopensource.com/2011/10/install-google-chrome-in-ubuntu-11-10-11-04-10-10-10-04/
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -60,6 +66,13 @@ sudo pip2 install --upgrade virtualenvwrapper
 sudo pip3 install --upgrade pip 
 sudo pip3 install --upgrade virtualenv 
 sudo pip3 install --upgrade virtualenvwrapper
+
+# Markdown viewer
+# https://github.com/axiros/terminal_markdown_viewer
+# Example:
+#   mdv README.md
+# Note: better use on dark background.
+sudo pip3 install --upgrade mdv
 
 # node and php are useful from the command line
 # sudo apt-get -y install nodejs npm nodejs-legacy
