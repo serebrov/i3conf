@@ -12,8 +12,8 @@
 // fira code - good font with ligatures (=> displayed as 1 symbol)
 //             note: ligatures don't work in gnome terminal, work in konsole
 //
-// mensh - https://robey.lag.net/2010/06/21/mensch-font.html
-//      similar to fira code, larger punctuation chars - ~, >
+// mensch - https://robey.lag.net/2010/06/21/mensch-font.html
+//       similar to fira code, larger punctuation chars - ~, >
 //
 // source code pro, office code pro
 //      https://github.com/adobe-fonts/source-code-pro
