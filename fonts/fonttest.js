@@ -1,3 +1,4 @@
+// 1S
 // Checks
 // o vs O vs 0
 // ; vs :
@@ -9,8 +10,13 @@
 // Type some code ->
 //
 // Fonts:
+// hasklig - based on source code pro,
+//           comparing to fira code - smaller letter height, bigger spacing
+//
 // fira code - good font with ligatures (=> displayed as 1 symbol)
 //             note: ligatures don't work in gnome terminal, work in konsole
+//
+// input - https://input.fontbureau.com (good and customizable, but no ligatures)
 //
 // mensch - https://robey.lag.net/2010/06/21/mensch-font.html
 //       similar to fira code, larger punctuation chars - ~, >
@@ -19,8 +25,7 @@
 //      https://github.com/adobe-fonts/source-code-pro
 //      https://github.com/nathco/Office-Code-Pro
 //
-// hasklig - also based on source code pro,
-//           comparing to fira code - smaller letter height, bigger spacing
+// ubuntu mono is also quite good
 //
 // To install font:
 //   sudo apt install fonts-fontname
@@ -28,6 +33,14 @@
 // if font is not present in repos - download (or git clone) to ~/.fonts and run `fc-cache -f -v`
 //
 // Tool to view fonts: https://app.programmingfonts.org
+
+console.log("o vs O vs 0");
+console.log("; vs :");
+console.log("g vs q");
+console.log("C vs G");
+console.log("() vs [] vs {}");
+console.log("~ vs -");
+console.log("i vs l vs 1 vs I vs L vs |");
 
 console.log(["oO08 iIlL1 g9qCGQ ~-+=>"]);
 
