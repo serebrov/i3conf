@@ -33,6 +33,7 @@
 // if font is not present in repos - download (or git clone) to ~/.fonts and run `fc-cache -f -v`
 //
 // Tool to view fonts: https://app.programmingfonts.org
+// Tool to add ligatures to a font: https://github.com/ToxicFrog/Ligaturizer
 
 console.log("o vs O vs 0");
 console.log("; vs :");
