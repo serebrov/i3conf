@@ -24,7 +24,7 @@ bindsym $mod+0 exec i3 bar mode toggle
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
 # bindsym $mod+Return exec konsole --hide-menubar --hide-tabbar
-bindsym $mod+Return exec konsole --profile profile
+bindsym $mod+Return exec konsole --profile profile -e /usr/bin/zsh
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -180,8 +180,8 @@ bindsym $mod+n mode "(s)leep (h)ybernate (p)owersave (r)estart shut(d)own"
 
 mode  "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center (r)elod audio system (n)etwork-manager restart" {
 
-        bindsym a exec konsole --role=xterm_util -e 'alsamixer -c 1'; mode "default"
-        bindsym h exec konsole --role=xterm_util --geometry=150x48 -e 'htop'; mode "default"
+        bindsym a exec gnome-terminal --role=xterm_util -- 'alsamixer -c 1'; mode "default"
+        bindsym h exec gnome-terminal --role=xterm_util --geometry=150x48 -- 'htop'; mode "default"
         bindsym p exec pavucontrol; mode "default"
         bindsym u exec XDG_CURRENT_DESKTOP=Unity unity-control-center; mode "default"
         # r - reload audio system, can be useful when switching USB audio input/output devices 
