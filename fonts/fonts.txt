@@ -1,0 +1,49 @@
+input: 11 (no ligatures), with line spacing = 1
+fira code: size 11 + 1 line spacing (last tab in konsole profile settings)
+  a bit denser than input, ~ and - are quite similar
+
+hasklig: 11 (a bit too small)
+
+mensh: size 11, good, no ligatures, large > and <, also a bit too dense
+metrical: size 11, good, a bit bolder than input
+generic mono II: size 11, good, almost like input, a bit more "serif"y
+code new roman: size 13, quite good, but a bit "comic"
+deja vu sans mono: size 11, good, just a bit too dense
+
+menlo: size 11, good, no ligatures, a bit too dense
+hack: size 11, looks good, no ligatures, vertically dense
+ubuntu mono: size 13, good; ~ and - are quite similar, a bit smaller than input 11
+iosevka: size 12 (too dense?)
+panic sans: size 11, good, a bit too dense vertically
+
+--
+
+bpmono: size 11-12, "comic"y
+agave: size 12-13, even more "comic" - nice, but not for the code
+fantasque sans mono: size 12 (but still small) - 13, a bit "comic" face, a bit dense
+anonymous pro: thin, C and G are too curvy (some other chars too)
+cmuntt (typewriter): size 13 - small fancy typewriter-like font, many similar chars (0 and O, etc)
+pointfree: very "comic", loose vertically
+
+---
+
+victor mono: size 12, letters are too high, so lines are dense
+pragmata pro: definitely too dense
+
+source code pro, office code pro - mostly same as Fira Code
+
+Cousine: size 11 (small, dense), with size 12 looks approx like Input 11, too "serif"
+
+monoid: size 9, too dense (loose variants look ugly)
+droid sans mono: 0 and O are similar, - and ~ are similar
+borg sans mono: size 11, a bit smaller than input, l and 1 are similar, ~ and - are similar
+inconsolata: size 13, 1 and l are similar, ; and : are similar.
+inconsolata-g: size 11, 1 and l are similar, ; and : are similar
+edlo: size 11, not bad, l and 1 are similar, ~ and - are similar
+roboto mono: size 11, a bit too loose vertiaclly, l and 1 are similar
+
+vera mono: size 11 - similar to Fira Code (maybe a parent of Fira)
+bront: size 12 is sill small, 13 is big; i and l look similar
+camino code: 11 is small, 12 is big
+mono one: 11 is small, 12 is big
+oxygen mono: size 11, too serify, i and l look similar, too loose vertically
