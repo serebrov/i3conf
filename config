@@ -24,7 +24,7 @@ bindsym $mod+0 exec i3 bar mode toggle
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
 # bindsym $mod+Return exec konsole --hide-menubar --hide-tabbar
-bindsym $mod+Return exec konsole --profile profile -e /usr/bin/zsh
+bindsym $mod+Return exec konsole --profile profile --hide-menubar --hide-tabbar -e /usr/bin/zsh
 
 # kill focused window
 bindsym $mod+Shift+Q kill
