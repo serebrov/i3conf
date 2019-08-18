@@ -74,6 +74,10 @@ sudo pip3 install --upgrade virtualenvwrapper
 # Note: better use on dark background.
 sudo pip3 install --upgrade mdv
 
+# Corrects previous command after error
+# https://github.com/nvbn/thefuck
+sudo pip3 install --upgrade thefuck
+
 # node and php are useful from the command line
 # sudo apt-get -y install nodejs npm nodejs-legacy
 # sudo apt-get install php7.0
@@ -249,6 +253,11 @@ sudo apt-get install alsa-tools-gui pavucontrol gnome-alsamixer
 sudo add-apt-repository -y ppa:phoerious/keepassxc
 sudo apt-get update
 sudo apt-get install -y keepassxc
+
+# Rust (update with `rustup update`)
+curl https://sh.rustup.rs -sSf | sh
+# improved ls (in rust)
+cargo install exa
 
 
 # https://help.ubuntu.com/community/SwapFaq
