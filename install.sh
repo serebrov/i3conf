@@ -40,6 +40,7 @@ sudo apt-get -y install kdiff3 konsole
 # This may help your eyes hurt less if you are working in front of the screen at night.
 # https://github.com/jonls/redshift
 # Example: redshift -v -l geoclue2
+# Dry run: redshift -v -l geoclue2 -p
 sudo apt-get -y install redshift
 
 # google chrome
@@ -255,9 +256,9 @@ sudo apt-get update
 sudo apt-get install -y keepassxc
 
 # Rust (update with `rustup update`)
-curl https://sh.rustup.rs -sSf | sh
+# curl https://sh.rustup.rs -sSf | sh
 # improved ls (in rust)
-cargo install exa
+# cargo install exa
 
 
 # https://help.ubuntu.com/community/SwapFaq
