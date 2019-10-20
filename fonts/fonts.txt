@@ -1,3 +1,9 @@
+Current settings:
+gnome-terminal - agave, 12pt
+konsole - Liga Input Mono,10
+konsole - LigaMensh,11 (12?)
+
+
 input: 11 (no ligatures), with line spacing = 1
 fira code: size 11 + 1 line spacing (last tab in konsole profile settings)
   a bit denser than input, ~ and - are quite similar
