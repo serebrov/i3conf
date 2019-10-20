@@ -169,18 +169,20 @@ sudo apt-get -y install feh scrot gmrun
 sudo apt-get -y install xbacklight xclip
 
 # shutter - screenshot tool (binded to Win+Print)
+# note: shutter is not in official repo anymore, an alternative is flameshot
+sudo add-apt-repository ppa:linuxuprising/shutter
 sudo apt-get -y install shutter
-# The shutter dependency that is missing in Ubuntu 18.04 repositories
-mkdir ~/libgoo-canvas-perl
-pushd ~/libgoo-canvas-perl
-wget http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgoo-canvas-perl/libgoo-canvas-perl_0.06-2ubuntu3_amd64.deb
-wget http://archive.ubuntu.com/ubuntu/pool/universe/libe/libextutils-depends-perl/libextutils-depends-perl_0.405-1_all.deb
-wget http://archive.ubuntu.com/ubuntu/pool/universe/libe/libextutils-pkgconfig-perl/libextutils-pkgconfig-perl_1.15-1_all.deb
-wget http://archive.ubuntu.com/ubuntu/pool/universe/g/goocanvas/libgoocanvas3_1.0.0-1_amd64.deb
-wget http://archive.ubuntu.com/ubuntu/pool/universe/g/goocanvas/libgoocanvas-common_1.0.0-1_all.deb
-sudo dpkg -i *.deb
-sudo apt install -f
-popd
+# # The shutter dependency that is missing in Ubuntu 18.04 repositories
+# mkdir ~/libgoo-canvas-perl
+# pushd ~/libgoo-canvas-perl
+# wget http://archive.ubuntu.com/ubuntu/pool/universe/libg/libgoo-canvas-perl/libgoo-canvas-perl_0.06-2ubuntu3_amd64.deb
+# wget http://archive.ubuntu.com/ubuntu/pool/universe/libe/libextutils-depends-perl/libextutils-depends-perl_0.405-1_all.deb
+# wget http://archive.ubuntu.com/ubuntu/pool/universe/libe/libextutils-pkgconfig-perl/libextutils-pkgconfig-perl_1.15-1_all.deb
+# wget http://archive.ubuntu.com/ubuntu/pool/universe/g/goocanvas/libgoocanvas3_1.0.0-1_amd64.deb
+# wget http://archive.ubuntu.com/ubuntu/pool/universe/g/goocanvas/libgoocanvas-common_1.0.0-1_all.deb
+# sudo dpkg -i *.deb
+# sudo apt install -f
+# popd
 
 # byzanz-record --delay=2 --duration=30 screencast.gif - record a screencast to gif
 # byzanz-record --duration=15 --x=200 --y=300 --width=700 --height=400 - record specific area
