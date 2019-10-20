@@ -17,9 +17,11 @@
 //             note: ligatures don't work in gnome terminal, work in konsole
 //
 // input - https://input.fontbureau.com (good and customizable, but no ligatures)
+// (liga input mono in Ligaturized has ligatures)
 //
 // mensch - https://robey.lag.net/2010/06/21/mensch-font.html
 //       similar to fira code, larger punctuation chars - ~, >
+// menlo - also good, similar to mensh
 //
 // source code pro, office code pro
 //      https://github.com/adobe-fonts/source-code-pro

@@ -16,10 +16,11 @@ ubuntu mono: size 13, good; ~ and - are quite similar, a bit smaller than input 
 iosevka: size 12 (too dense?)
 panic sans: size 11, good, a bit too dense vertically
 
+agave: size 12-13, even more "comic" - nice, but not for the code
+
 --
 
 bpmono: size 11-12, "comic"y
-agave: size 12-13, even more "comic" - nice, but not for the code
 fantasque sans mono: size 12 (but still small) - 13, a bit "comic" face, a bit dense
 anonymous pro: thin, C and G are too curvy (some other chars too)
 cmuntt (typewriter): size 13 - small fancy typewriter-like font, many similar chars (0 and O, etc)
