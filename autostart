@@ -14,14 +14,15 @@ SCRIPT_PATH=`dirname $0`
 
 /usr/lib/gnome-settings-daemon/gsd-xsettings &
 # /usr/lib/gnome-settings-daemon/gsd-a11y-settings &
-# /usr/lib/gnome-settings-daemon/gsd-clipboard &
+# /usr/lib/gnome-settings-daemon/gsd-backlight-helper &
 # /usr/lib/gnome-settings-daemon/gsd-color &
 # /usr/lib/gnome-settings-daemon/gsd-datetime &
+# /usr/lib/gnome-settings-daemon/gsd-dummy &
 # /usr/lib/gnome-settings-daemon/gsd-housekeeping &
 # /usr/lib/gnome-settings-daemon/gsd-keyboard &
 # /usr/lib/gnome-settings-daemon/gsd-media-keys &
-# /usr/lib/gnome-settings-daemon/gsd-mouse &
 # /usr/lib/gnome-settings-daemon/gsd-power &
+# /usr/lib/gnome-settings-daemon/gsd-printer &
 # /usr/lib/gnome-settings-daemon/gsd-print-notifications &
 # /usr/lib/gnome-settings-daemon/gsd-rfkill &
 # /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy &
@@ -29,12 +30,14 @@ SCRIPT_PATH=`dirname $0`
 # /usr/lib/gnome-settings-daemon/gsd-smartcard &
 # /usr/lib/gnome-settings-daemon/gsd-sound &
 # /usr/lib/gnome-settings-daemon/gsd-wacom &
-# /usr/lib/gnome-settings-daemon/gsd-printer &
+# /usr/lib/gnome-settings-daemon/gsd-wacom-led-helper &
+# /usr/lib/gnome-settings-daemon/gsd-wacom-oled-helper &
+# /usr/lib/gnome-settings-daemon/gsd-wacom-wwan &
 
 # /usr/bin/gnome-software --gapplication-service
 /usr/lib/gnome-disk-utility/gsd-disk-utility-notify &
 
-gnome-power-manager &
+# gnome-power-manager &
 gnome-flashback &
 
 # Note: to remove the bottom panel, run:
