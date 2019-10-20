@@ -8,7 +8,19 @@ SCRIPT_PATH=`dirname $0`
 # xrandr --output eDP-1-1 --scale 2.0x2.0
 
 # Set dpi and scale for laptop screen
-xrandr --output eDP-1 --dpi 220 --scale 1.3x1.3
+xrandr --output eDP-1 --dpi 216 --scale 1.3x1.3
+#
+# Check the current resolution:
+# xdpyinfo | grep -B 2 resolution 
+#
+# How to calculate dpi: https://winaero.com/blog/find-change-screen-dpi-linux/
+# $ xrandr | grep -w connected
+#  eDP-1 connected primary 3744x2106+0+0 (normal left inverted right x axis y axis) 340mm x 190mm
+#
+# Physical size: 340mm x 190mm -> 13.39 in x 7.48 in
+# DPI: 3744 / 13.39 = 279.6; 2106 / 7.48 = 281.6
+# (but actual resolution in gnome-control-center is 2880 x 1620):
+# DPI: 2880 / 13.39 = 215; 1620 / 7.48 = 216
 #
 # Related gnome settings:
 #
