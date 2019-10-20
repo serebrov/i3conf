@@ -7,6 +7,16 @@ SCRIPT_PATH=`dirname $0`
 # xrandr --output eDP-1-1 --dpi 220
 # xrandr --output eDP-1-1 --scale 2.0x2.0
 
+# Set dpi and scale for laptop screen
+xrandr --output eDP-1 --dpi 220 --scale 1.3x1.3
+#
+# Related gnome settings:
+#
+# gsettings get org.gnome.desktop.interface text-scaling-factor
+# gsettings set org.gnome.desktop.interface text-scaling-factor 1.0
+#
+# gsettings get org.gnome.desktop.interface scaling-factor
+# gsettings set org.gnome.desktop.interface scaling-factor 1.0
 
 # it now starts with the session (see gnome-session-setup-lvillani/)
 # unity-settings-daemon &
