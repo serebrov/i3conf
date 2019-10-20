@@ -40,6 +40,7 @@ sudo apt-get -y install kdiff3 konsole
 # This may help your eyes hurt less if you are working in front of the screen at night.
 # https://github.com/jonls/redshift
 # Example: redshift -v -l geoclue2
+# Dry run: redshift -v -l geoclue2 -p
 sudo apt-get -y install redshift
 
 # google chrome
@@ -52,11 +53,11 @@ sudo apt-get -y install google-chrome-stable
 
 # Oracle java
 # http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get -y install oracle-java8-installer
-sudo mkdir /opt/google/chrome/plugins
-sudo ln -s /usr/lib/jvm/java-7-oracle/jre/lib/amd64/libnpjp2.so /opt/google/chrome/plugins/libnpjp2.so
+# sudo add-apt-repository ppa:webupd8team/java
+# sudo apt-get update
+# sudo apt-get -y install oracle-java8-installer
+# sudo mkdir /opt/google/chrome/plugins
+# sudo ln -s /usr/lib/jvm/java-7-oracle/jre/lib/amd64/libnpjp2.so /opt/google/chrome/plugins/libnpjp2.so
 
 # python and pip
 sudo apt-get -y install python-pip python-dev python3-pip python3-dev build-essential 
@@ -106,6 +107,10 @@ sudo apt-get -y install docker-ce
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
+# Docker compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
 ###### i3 + gnome3
 # http://blog.hugochinchilla.net/2013/03/using-gnome-3-with-i3-window-manager/
 
@@ -114,7 +119,7 @@ sudo dpkg -i ./keyring.deb
 sudo echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" >> /etc/apt/sources.list.d/sur5r-i3.list
 sudo apt update
 # gnome-flashback is needed in 18.04, see https://github.com/csxr/i3-gnome/wiki/Tips-&-Tricks
-sudo apt -y install i3 gnome-flashback
+sudo apt -y install i3 gnome-flashback gnome-panel
 
 pushd ~/
   # gnome+i3 session
@@ -255,9 +260,9 @@ sudo apt-get update
 sudo apt-get install -y keepassxc
 
 # Rust (update with `rustup update`)
-curl https://sh.rustup.rs -sSf | sh
+# curl https://sh.rustup.rs -sSf | sh
 # improved ls (in rust)
-cargo install exa
+# cargo install exa
 
 
 # https://help.ubuntu.com/community/SwapFaq
