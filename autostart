@@ -8,7 +8,7 @@ SCRIPT_PATH=`dirname $0`
 # xrandr --output eDP-1-1 --scale 2.0x2.0
 
 # Set dpi and scale for laptop screen
-xrandr --output eDP-1 --dpi 216 --scale 1.3x1.3
+xrandr --output eDP-1 --dpi 216 --scale 1.2x1.2
 #
 # Check the current resolution:
 # xdpyinfo | grep -B 2 resolution 
