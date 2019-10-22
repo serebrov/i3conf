@@ -14,6 +14,8 @@ sudo apt-get -y install lnav
 # disk space analyzer
 # sudo apt-get -y install ncdu
 
+sudo apt -y install gnome-tweaks
+
 # Fira Mono font
 mkdir -p ~/.fonts
 cp -r ~/.i3/fonts/* ~/.fonts
@@ -78,6 +80,20 @@ sudo pip3 install --upgrade mdv
 # Corrects previous command after error
 # https://github.com/nvbn/thefuck
 sudo pip3 install --upgrade thefuck
+
+# nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
+# node
+nvm install 12
+
+# syncthing
+# Add the release PGP keys:
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+# Add the "stable" channel to your APT sources:
+echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+# Update and install syncthing:
+sudo apt update
+sudo apt -y install syncthing
 
 # node and php are useful from the command line
 # sudo apt-get -y install nodejs npm nodejs-legacy
