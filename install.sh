@@ -151,6 +151,12 @@ sudo chmod +x ~/.i3/autostart
 # gsettings set org.gnome.desktop.background show-desktop-icons false
 ln -s ~/.i3/.i3status.conf ~/.i3status.conf
 
+# Regolith (i3 "bundle")
+sudo add-apt-repository -y ppa:kgilmer/regolith-stable
+sudo apt install regolith-desktop
+
+ln -s ~/.i3/regolith/i3 ~/.config/regolith/i3
+
 #renameutils - Programs to make file renaming easier
 #http://www.nongnu.org/renameutils/
 sudo apt-get -y install renameutils
@@ -232,8 +238,7 @@ sudo apt-get -y install htop
 sudo apt-get -y install ranger
 
 ### Sound settings
-# alsa-tools-gui is for hdajackretask
-sudo apt-get install alsa-tools-gui pavucontrol gnome-alsamixer
+sudo apt-get install pavucontrol
 
 #### Install Volnoti (handles Win + '+' / Win + '-' to control sound level)
 # cd ~
