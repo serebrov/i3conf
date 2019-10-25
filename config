@@ -244,6 +244,7 @@ assign [class="^Psensor$"] 2
 assign [class="^Empathy$"] 3
 assign [class="^Pidgin$"] 5
 assign [class="^Skype$"] 5
+assign [class="^Upwork$"] 5
 # assign [class="^Firefox$"] 4
 # assign [class="^URxvt$" instance="^mail$"] 4
 # assign [title="Lingea Lexicon 5$"] 8

@@ -8,7 +8,7 @@ set $mod Mod4
 set $alt Mod1
 
 # i3xrocks config file
-set $i3xrocks_config /etc/regolith/i3xrocks/config
+# set $i3xrocks_config /etc/regolith/i3xrocks/config
 
 # compton config file
 set $compton_config /etc/regolith/compton/config
@@ -324,6 +324,9 @@ bar {
 
 # Custom changes
 
+# i3xrocks config file
+set $i3xrocks_config ~/.config/regolith/i3/i3xrocks.config
+
 # kill focused window
 bindsym $mod+q kill
 # focus the parent container
@@ -371,12 +374,13 @@ mode  "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center (r)elod aud
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-bindsym $mod+u mode "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center (r)elod audio system (n)etwork-manager restart"
+bindsym $mod+u mode "Utils (h)top (p)avucontrol (r)elod audio system (n)etwork-manager restart"
 
 # http://i3wm.org/docs/user-contributed/lzap-config.html
 # workspace assignment (use "xprop")
 assign [class="^Psensor$"] $ws2
 assign [class="^Skype$"] $ws5
+assign [class="^Upwork$"] $ws5
 
 # http://i3wm.org/docs/user-contributed/lzap-config.html
 # http://habrahabr.ru/post/150100/
