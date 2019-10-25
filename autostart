@@ -92,6 +92,9 @@ update-notifier &
 # volnoti &
 # ~/deadbeef/deadbeef &
 
+# http://127.0.0.1:8384/#
+syncthing &
+
 #setxkbmap us,ru -option "grp:caps_toggle,grp_led:scroll" -option compose:menu
 $SCRIPT_PATH/keyboard-setup.sh
 
