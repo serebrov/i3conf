@@ -29,6 +29,10 @@ xrandr --output eDP-1 --dpi 216 --scale 1.2x1.2
 #
 # gsettings get org.gnome.desktop.interface scaling-factor
 # gsettings set org.gnome.desktop.interface scaling-factor 1.0
+#
+# See also:
+#  https://wiki.archlinux.org/index.php/HiDPI#X_Resources
+#  https://unix.stackexchange.com/questions/267885/how-do-i-scale-i3-window-manager-for-my-hidpi-display/274705#274705
 
 # it now starts with the session (see gnome-session-setup-lvillani/)
 # unity-settings-daemon &
