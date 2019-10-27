@@ -1,134 +1,61 @@
-!xterm*font: terminus-12
-! Use a nice truetype font and size by default... 
-xterm_scratchpad*faceName: DejaVu Sans Mono Book
-xterm_scratchpad*faceSize: 11
+! Fonts {{{
+Xft.antialias: true
+Xft.hinting:   true
+Xft.rgba:      rgb
+Xft.hintstyle: hintfull
+Xft.dpi:       216
+! }}}
+## Rofi Theming
+# rofi.color-enabled: true
+# rofi.color-window: #273238, #273238, #1e2529
+# rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
+# rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
+# rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
 
-! Every shell is a login shell by default (for inclusion of all necessary environment variables)
-xterm_scratchpad*loginshell: true
+## UXTerm Settings
 
-! I like a LOT of scrollback...
-xterm_scratchpad*savelines: 16384
-
-! double-click to select whole URLs :D
-xterm_scratchpad*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-
-! DOS-box colours...
-xterm_scratchpad*foreground: rgb:a8/a8/a8
-xterm_scratchpad*background: rgb:00/00/00
-xterm_scratchpad*color0: rgb:00/00/00
-xterm_scratchpad*color1: rgb:a8/00/00
-xterm_scratchpad*color2: rgb:00/a8/00
-xterm_scratchpad*color3: rgb:a8/54/00
-xterm_scratchpad*color4: rgb:00/00/a8
-xterm_scratchpad*color5: rgb:a8/00/a8
-xterm_scratchpad*color6: rgb:00/a8/a8
-xterm_scratchpad*color7: rgb:a8/a8/a8
-xterm_scratchpad*color8: rgb:54/54/54
-xterm_scratchpad*color9: rgb:fc/54/54
-xterm_scratchpad*color10: rgb:54/fc/54
-xterm_scratchpad*color11: rgb:fc/fc/54
-xterm_scratchpad*color12: rgb:54/54/fc
-xterm_scratchpad*color13: rgb:fc/54/fc
-xterm_scratchpad*color14: rgb:54/fc/fc
-xterm_scratchpad*color15: rgb:fc/fc/fc
-
-! right hand side scrollbar...
-xterm_scratchpad*rightScrollBar: true
-xterm_scratchpad*ScrollBar: true
-
-! stop output to terminal from jumping down to bottom of scroll again
-xterm_scratchpad*scrollTtyOutput: false
-
-URxvt.intensityStyles: false
-
-! see http://www.askapache.com/linux/rxvt-xresources.html
-!Check with tput colors and echo $TERM
-URxvt.termName: rxvt-256color
-URxvt.loginShell: true
-URxvt.font: xft:Ubuntu Mono:size=12:antialias=true:hinting=true
-URxvt.boldFont: xft:Ubuntu Mono Bold:size=12:antialias=true:hinting=true
+# UXTerm*allowBoldFonts:       false
+# UXTerm*termName:  xterm-256color
+# XTerm.termName: xterm-256color
 
 
-! General
-!urxvt*termName:  rxvt-256color
-! these three lines enable clicking on links to open them 
-!# if you want to enable tab support, append ,tabbed to the next line
-!# then use shift+down arrow to create tabs and shift+{left,right} arrows to switch between them
-URxvt*perl-ext-common: default,matcher,-option-popup,-selection-popup,-realine
-URxvt*matcher.button: 1
-! do not forget to change this to your favorite browser
-URxvt*urlLauncher: google-chrome
-
-! in the case urxvt is pink use xrdb ~/.Xresources
-! see http://unix.stackexchange.com/questions/104895/my-xresources-is-disabling-gtk-antialiasing
-
-! Solarized color scheme for the X Window System
-!
-! http://ethanschoonover.com/solarized
-
-
-! Common
-
-#define S_yellow        #b58900
-#define S_orange        #cb4b16
-#define S_red           #dc322f
-#define S_magenta       #d33682
-#define S_violet        #6c71c4
-#define S_blue          #268bd2
-#define S_cyan          #2aa198
-#define S_green         #859900
-
-
-! Dark
-
-#define S_base03        #002b36
-#define S_base02        #073642
-#define S_base01        #586e75
-#define S_base00        #657b83
-#define S_base0         #839496
-#define S_base1         #93a1a1
-#define S_base2         #eee8d5
-#define S_base3         #fdf6e3
-
-
-! Light
-
-! #define S_base03        #fdf6e3
-! #define S_base02        #eee8d5
-! #define S_base01        #93a1a1
-! #define S_base00        #839496
-! #define S_base0         #657b83
-! #define S_base1         #586e75
-! #define S_base2         #073642
-! #define S_base3         #002b36
-
-
-! To only apply colors to your terminal, for example, prefix
-! the color assignment statement with its name. Example:
-!
-! URxvt*background:            S_base03
-
-*background:              S_base03
-*foreground:              S_base0
-*fading:                  40
-*fadeColor:               S_base03
-*cursorColor:             S_base1
-*pointerColorBackground:  S_base01
-*pointerColorForeground:  S_base1
-
-*color0:                  S_base02
-*color1:                  S_red
-*color2:                  S_green
-*color3:                  S_yellow
-*color4:                  S_blue
-*color5:                  S_magenta
-*color6:                  S_cyan
-*color7:                  S_base2
-*color8:                  S_base03
-*color9:                  S_orange
-*color10:                 S_base01
-*color11:                 S_base00
-*color12:                 S_base0
-*color13:                 S_violet
-*color14:                 S_base1
-*color15:                 S_base3
+# *.foreground:  #bdbaae
+# *.background:  #222222
+# *.cursorColor: #bbbbbb
+# !
+# ! Black
+# *.color0:      #15171c
+# *.color8:      #555555
+# !
+# ! Red
+# *.color1:      #ec5f67
+# *.color9:      #ff6973
+# !
+# ! Green
+# *.color2:      #81a764
+# *.color10:     #93d493
+# !
+# ! Yellow
+# *.color3:      #fec254
+# *.color11:     #ffd256
+# !
+# ! Blue
+# *.color4:      #5486c0
+# *.color12:     #4d84d1
+# !
+# ! Magenta
+# *.color5:      #bf83c1
+# *.color13:     #ff55ff
+# !
+# ! Cyan
+# *.color6:      #57c2c1
+# *.color14:     #83e9e4
+# !
+# ! White
+# *.color7:      #efece7
+# *.color15:     #ffffff
+# !
+# ! Bold, Italic, Underline
+# *.colorBD:     #ffffff
+# !*.colorIT:
+# !*.colorUL:

@@ -1,3 +1,10 @@
+! -- Custom: Fonts
+Xft.antialias: true
+Xft.hinting:   true
+Xft.rgba:      rgb
+Xft.hintstyle: hintfull
+Xft.dpi:       216
+
 ! This is the Regolith root-level Xresources file.
 !
 ! -- Styles - Colors
@@ -50,4 +57,3 @@
 #include "/etc/regolith/styles/i3xrocks"
 #include "/etc/regolith/styles/rofi"
 #include "/etc/regolith/styles/gnome"
-
