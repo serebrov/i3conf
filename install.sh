@@ -16,7 +16,7 @@ sudo apt-get -y install lnav
 
 sudo apt -y install gnome-tweaks
 
-# Fira Mono font
+# Custom fonts.
 mkdir -p ~/.fonts
 cp -r ~/.i3/fonts/* ~/.fonts
 fc-cache -f -v
