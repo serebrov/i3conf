@@ -298,3 +298,8 @@ sudo apt-get install -y keepassxc
 # That's great, recommended value is 10 and default is 60
 # My machine works much better with 10
 # echo "vm.swappiness=10" | sudo sh -c 'cat >> /etc/sysctl.conf'
+
+# Update inotify max watches
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+# Show current value
+cat /proc/sys/fs/inotify/max_user_watches
