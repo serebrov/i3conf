@@ -3,7 +3,9 @@ Xft.antialias: true
 Xft.hinting:   true
 Xft.rgba:      rgb
 Xft.hintstyle: hintfull
-Xft.dpi:       216
+! -- 216 / 1.2 = 180
+! -- We set 1.2 scale in ~/.i3/regolith/config
+Xft.dpi:       180
 
 ! This is the Regolith root-level Xresources file.
 !
