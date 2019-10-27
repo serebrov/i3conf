@@ -361,7 +361,7 @@ bindsym $mod+Shift+Return exec $terminal_path
 
 # bindsym $mod+t exec "~/.i3/scripts/touchpad-toggle.sh"
 
-mode  "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center (r)elod audio system (n)etwork-manager restart" {
+mode  "Utils (h)top (p)avucontrol (r)elod audio system (n)etwork-manager restart (x)rdb -merge ~/.Xresources-regolith" {
   # bindsym a exec gnome-terminal --role=xterm_util -- 'alsamixer -c 1'; mode "default"
   bindsym h exec gnome-terminal --role=xterm_util --geometry=150x48 -- 'htop'; mode "default"
   bindsym p exec pavucontrol; mode "default"
@@ -370,11 +370,13 @@ mode  "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center (r)elod aud
   bindsym r exec pulseaudio -k && sudo alsa force-reload; mode "default"
   # n - reload network manager
   bindsym n exec sudo service network-manager restart; mode "default"
+  # x - reload Xresources
+  bindsym x exec xrdb -merge ~/.Xresources-regolith; mode "default"
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-bindsym $mod+u mode "Utils (h)top (p)avucontrol (r)elod audio system (n)etwork-manager restart"
+bindsym $mod+u mode "Utils (h)top (p)avucontrol (r)elod audio system (n)etwork-manager restart (x)rdb -merge ~/.Xresources-regolith"
 
 # http://i3wm.org/docs/user-contributed/lzap-config.html
 # workspace assignment (use "xprop")
