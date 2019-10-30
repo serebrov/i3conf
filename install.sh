@@ -280,9 +280,7 @@ sudo apt-get install pavucontrol
 # sudo apt-get install pass
 
 #KeePassXC
-sudo add-apt-repository -y ppa:phoerious/keepassxc
-sudo apt-get update
-sudo apt-get install -y keepassxc
+sudo snap install keepassxc
 
 # Rust (update with `rustup update`)
 # curl https://sh.rustup.rs -sSf | sh
