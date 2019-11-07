@@ -365,6 +365,11 @@ bindsym $mod+Return exec konsole --profile profile --hide-menubar --hide-tabbar 
 # bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
 bindsym $mod+Shift+Return exec $terminal_path
 
+# Gmrun (sudo apt-get install gmrun)
+# Rofi can't (or I didn't find how to) launch the app using path, such as
+# ~/myapp/<TAB> ...
+bindsym $mod+g exec gmrun
+
 # bindsym $mod+t exec "~/.i3/scripts/touchpad-toggle.sh"
 
 mode  "Utils (h)top (p)avucontrol (r)elod audio system (n)etwork-manager restart (x)rdb -merge ~/.Xresources-regolith" {
