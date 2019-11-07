@@ -52,7 +52,7 @@ hide_edge_borders smart
 # kill focused window
 # bindsym $mod+Shift+q kill
 
-set_from_resource $rofiTheme rofi.theme "regolith-theme"
+set_from_resource $rofiTheme rofi.theme "/etc/regolith/rofi/regolith-theme"
 
 # rofi app and window launchers
 bindsym $mod+space exec rofi -show drun -theme $rofiTheme
