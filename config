@@ -316,5 +316,5 @@ client.unfocused        #333333 #93a1a1 #fdf6e3 #292d2e
 
 # autostart
 exec ~/.i3/autostart
-exec --no-startup-id wmctrl -c Plasma
+# exec --no-startup-id wmctrl -c Plasma
 # exec --no-startup-id unity-settings-daemon &
