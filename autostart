@@ -8,19 +8,40 @@ SCRIPT_PATH=`dirname $0`
 # xrandr --output eDP-1-1 --scale 2.0x2.0
 
 # Set dpi and scale for laptop screen
-xrandr --output eDP-1 --dpi 216 --scale 1.2x1.2
+# Note: need to set scale to 200% in gnome settings.
+# xrandr --output eDP-1 --dpi 216 --scale 1.25x1.25
+xrandr --output eDP-1 --auto --scale 1.25x1.25
+# xrandr --output eDP-1 --dpi 216 --scale 1.25x1.25 --fb 3600x2025 --panning 3600x2025
 #
-# Check the current resolution:
-# xdpyinfo | grep -B 2 resolution 
+# check the current resolution:
+# xdpyinfo | grep -b 2 resolution 
 #
-# How to calculate dpi: https://winaero.com/blog/find-change-screen-dpi-linux/
+# how to calculate dpi: https://winaero.com/blog/find-change-screen-dpi-linux/
 # $ xrandr | grep -w connected
-#  eDP-1 connected primary 3744x2106+0+0 (normal left inverted right x axis y axis) 340mm x 190mm
+#  edp-1 connected primary 3744x2106+0+0 (normal left inverted right x axis y axis) 340mm x 190mm
 #
 # Physical size: 340mm x 190mm -> 13.39 in x 7.48 in
 # DPI: 3744 / 13.39 = 279.6; 2106 / 7.48 = 281.6
 # (but actual resolution in gnome-control-center is 2880 x 1620):
 # DPI: 2880 / 13.39 = 215; 1620 / 7.48 = 216
+#
+# List displays:
+#   xrandr --query
+#
+# Physical size: 597mm x 336mm -> 23.5 in x 13.23 in
+# DPI: 3840 / 23.5 = 163.4; 2160 / 13.23 = 163.3 ?
+# Physical size: 790mm x 254mm -> 31.1 in x 10 in
+# DPI: 6720 / 23.5 = 216; 2160 / 10 = 216
+#
+# xrandr --output DP-2-1 --auto --scale 1.25x1.25 --output eDP-1  --auto --scale 1.25x1.25 --rithgt-of DP-2-1
+# # xrandr --output DP-2-1 --scale 1.25x1.25 --output eDP-1 --scale 1.25x1.25
+# # xrandr --output DP-2-1 --dpi 216 --scale 1.35x1.35
+# # xrandr --output DP-2-1 --dpi 216 --scale 1.25x1.25 --output eDP-1 --dpi 216 --scale 1.25x1.25
+# # xrandr --output DP-2-1 --dpi 216 --scale 1.25x1.25 --fb 4800x2700 --panning 4800x2700 --output eDP-1 --dpi 216 --scale 1.25x1.25 --fb 3600x2025 --panning 3600x2025
+#
+# gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
+#
+# Note: scaling settings odn't seem to work when nvidia is enabled.
 #
 # Related gnome settings:
 #
