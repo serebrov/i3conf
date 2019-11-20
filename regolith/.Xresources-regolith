@@ -29,8 +29,8 @@ Xft.dpi:       180
 ! -- Overrdie font styles
 #define typeface_bar_glyph  Ubuntu Mono 14
 #define typeface_bar        pango:FontAwesome 13
-#define typeface_rofi       Ubuntu Mono 13
-#define typeface_terminal   Liga Input Mono:pixelsize=28:antialias=true:autohint=true
+#define typeface_rofi       Ubuntu Mono 23
+#define typeface_terminal   Liga Input Mono:pixelsize=27:antialias=true:autohint=true
 
 ! -- Styles - Theme
 ! NOTE: GTK theme and icon packages may need to be installed when enabling themes.
