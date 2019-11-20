@@ -33,7 +33,11 @@ xrandr --output eDP-1 --auto --scale 1.25x1.25
 # Physical size: 790mm x 254mm -> 31.1 in x 10 in
 # DPI: 6720 / 23.5 = 216; 2160 / 10 = 216
 #
-# xrandr --output DP-2-1 --auto --scale 1.25x1.25 --output eDP-1  --auto --scale 1.25x1.25 --rithgt-of DP-2-1
+# xrandr --output DP-2-1 --auto --scale 1.25x1.25 --output eDP-1  --auto --scale 1.25x1.25 --right-of DP-2-1
+# xrandr --output eDP-1 --off
+# xrandr --output DP-2-1 --auto --scale 1.25x1.25
+# xrandr --dpi 220
+#
 # # xrandr --output DP-2-1 --scale 1.25x1.25 --output eDP-1 --scale 1.25x1.25
 # # xrandr --output DP-2-1 --dpi 216 --scale 1.35x1.35
 # # xrandr --output DP-2-1 --dpi 216 --scale 1.25x1.25 --output eDP-1 --dpi 216 --scale 1.25x1.25
