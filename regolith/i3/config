@@ -359,11 +359,11 @@ bindsym $mod+o scratchpad show
 # start a terminal -> use konsole by default.
 # Note: Ctrl-Shift-M to show / hide the console menubar.
 # bindsym $mod+Return exec $terminal_path
-bindsym $mod+Return exec konsole --profile profile --hide-menubar --hide-tabbar -e /usr/bin/zsh
+bindsym $mod+Shift+Return exec konsole --profile profile --hide-menubar --hide-tabbar -e /usr/bin/zsh
 
 # start a web browser -> change to start st
 # bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
-bindsym $mod+Shift+Return exec $terminal_path
+bindsym $mod+Return exec $terminal_path zsh
 
 # Gmrun (sudo apt-get install gmrun)
 # Rofi can't (or I didn't find how to) launch the app using path, such as
