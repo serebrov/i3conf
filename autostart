@@ -5,14 +5,13 @@ SCRIPT_PATH=`dirname $0`
 #xrandr --dpi 220
 # xrandr --output DP-1-2-1 --scale 1.75x1.75 --dpi 220
 # xrandr --output eDP-1-1 --dpi 220
-# xrandr --output eDP-1-1 --scale 2.0x2.0
+# xrandr --output eDP-1-1 --scale 2.0x2.0                                                                                                                                                                  xrandr --output eDP-1 --dpi 216 --scale 1.25x1.25 --fb 3600x2025 --panning 3600x2025 
 
 # Set dpi and scale for laptop screen
 # Note: need to set scale to 200% in gnome settings.
-# xrandr --output eDP-1 --dpi 216 --scale 1.25x1.25
-xrandr --output eDP-1 --auto --scale 1.25x1.25
-# xrandr --output eDP-1 --dpi 216 --scale 1.25x1.25 --fb 3600x2025 --panning 3600x2025
-#
+# See also Makefile
+xrandr --output eDP-1 --dpi 216 --scale 1.25x1.25
+
 # check the current resolution:
 # xdpyinfo | grep -b 2 resolution 
 #
@@ -32,16 +31,6 @@ xrandr --output eDP-1 --auto --scale 1.25x1.25
 # DPI: 3840 / 23.5 = 163.4; 2160 / 13.23 = 163.3 ?
 # Physical size: 790mm x 254mm -> 31.1 in x 10 in
 # DPI: 6720 / 23.5 = 216; 2160 / 10 = 216
-#
-# xrandr --output DP-2-1 --auto --scale 1.25x1.25 --output eDP-1  --auto --scale 1.25x1.25 --right-of DP-2-1
-# xrandr --output eDP-1 --off
-# xrandr --output DP-2-1 --auto --scale 1.25x1.25
-# xrandr --dpi 220
-#
-# # xrandr --output DP-2-1 --scale 1.25x1.25 --output eDP-1 --scale 1.25x1.25
-# # xrandr --output DP-2-1 --dpi 216 --scale 1.35x1.35
-# # xrandr --output DP-2-1 --dpi 216 --scale 1.25x1.25 --output eDP-1 --dpi 216 --scale 1.25x1.25
-# # xrandr --output DP-2-1 --dpi 216 --scale 1.25x1.25 --fb 4800x2700 --panning 4800x2700 --output eDP-1 --dpi 216 --scale 1.25x1.25 --fb 3600x2025 --panning 3600x2025
 #
 # gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
 #
