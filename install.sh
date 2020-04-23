@@ -10,7 +10,7 @@ sudo apt-get -y install zsh zsh-doc
 # tmux and byobu
 sudo apt-get -y install tmux # byobu
 # log navigation
-sudo apt-get -y install lnav
+# sudo apt-get -y install lnav
 # disk space analyzer
 # sudo apt-get -y install ncdu
 
@@ -62,13 +62,13 @@ sudo apt-get -y install google-chrome-stable
 # sudo ln -s /usr/lib/jvm/java-7-oracle/jre/lib/amd64/libnpjp2.so /opt/google/chrome/plugins/libnpjp2.so
 
 # python and pip
-sudo apt-get -y install python-pip python-dev python3-pip python3-dev build-essential 
-sudo pip2 install --upgrade pip 
-sudo pip2 install --upgrade virtualenv 
-sudo pip2 install --upgrade virtualenvwrapper
-sudo pip3 install --upgrade pip 
-sudo pip3 install --upgrade virtualenv 
-sudo pip3 install --upgrade virtualenvwrapper
+sudo apt-get -y install python-pip python-dev python3-pip python3-dev build-essential
+sudo pip2 install --upgrade pip
+sudo pip2 install --upgrade virtualenv
+# sudo pip2 install --upgrade virtualenvwrapper
+sudo pip3 install --upgrade pip
+sudo pip3 install --upgrade virtualenv
+# sudo pip3 install --upgrade virtualenvwrappe
 
 # Markdown viewer
 # https://github.com/axiros/terminal_markdown_viewer
@@ -124,25 +124,26 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # Docker compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+To install 
 sudo chmod +x /usr/local/bin/docker-compose
 
 ###### i3 + gnome3
 # http://blog.hugochinchilla.net/2013/03/using-gnome-3-with-i3-window-manager/
 
-/usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2019.02.01_all.deb keyring.deb SHA256:176af52de1a976f103f9809920d80d02411ac5e763f695327de9fa6aff23f416
-sudo dpkg -i ./keyring.deb
-sudo echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" >> /etc/apt/sources.list.d/sur5r-i3.list
-sudo apt update
-# gnome-flashback is needed in 18.04, see https://github.com/csxr/i3-gnome/wiki/Tips-&-Tricks
-sudo apt -y install i3 gnome-flashback gnome-panel
-
-pushd ~/
-  # gnome+i3 session
-  git clone https://github.com/csxr/i3-gnome.git
-  cd i3-gnome
-  sudo make install
-popd
+# /usr/lib/apt/apt-helper download-file http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2019.02.01_all.deb keyring.deb SHA256:176af52de1a976f103f9809920d80d02411ac5e763f695327de9fa6aff23f416
+# sudo dpkg -i ./keyring.deb
+# sudo echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" >> /etc/apt/sources.list.d/sur5r-i3.list
+# sudo apt update
+# # gnome-flashback is needed in 18.04, see https://github.com/csxr/i3-gnome/wiki/Tips-&-Tricks
+# sudo apt -y install i3 gnome-flashback gnome-panel
+# 
+# pushd ~/
+#   # gnome+i3 session
+#   git clone https://github.com/csxr/i3-gnome.git
+#   cd i3-gnome
+#   sudo make install
+# popd
 
 # sudo apt-get -y install classicmenu-indicator
 
@@ -189,7 +190,7 @@ git clone https://github.com/junegunn/fzf.git ~/.fzf
 # feh - image viewer
 # scrot - make a screenthot (binded to Print key in i3 config)
 # gmrun - app runner dialog (Win + G)
-sudo apt-get -y install feh scrot gmrun
+sudo apt-get -y install feh # scrot gmrun
 sudo apt-get -y install xbacklight xclip
 
 # shutter - screenshot tool (binded to Win+Print)
@@ -297,12 +298,12 @@ sudo snap install keepassxc
 # My machine works much better with 10
 # echo "vm.swappiness=10" | sudo sh -c 'cat >> /etc/sysctl.conf'
 # echo current value
-cat /proc/sys/vm/swappiness
+# cat /proc/sys/vm/swappiness
 
 # Update inotify max watches
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+# echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 # Show current value
-cat /proc/sys/fs/inotify/max_user_watches
+# cat /proc/sys/fs/inotify/max_user_watches
 
 sudo apt -y install pv
 clear ; for t in "Wake up" "The Matrix has you" "Follow the white rabbit" "Knock, knock";do clear;pv -qL10 <<<$'\e[2J'$'\e[32m'$t$'\e[37m';sleep 5;done
