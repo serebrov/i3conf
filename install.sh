@@ -62,9 +62,10 @@ sudo apt-get -y install google-chrome-stable
 # sudo ln -s /usr/lib/jvm/java-7-oracle/jre/lib/amd64/libnpjp2.so /opt/google/chrome/plugins/libnpjp2.so
 
 # python and pip
-sudo apt-get -y install python-pip python-dev python3-pip python3-dev build-essential
-sudo pip2 install --upgrade pip
-sudo pip2 install --upgrade virtualenv
+# sudo apt-get -y install python-pip python-dev
+sudo apt-get -y install python3-pip python3-dev build-essential python-is-python3
+# sudo pip2 install --upgrade pip
+# sudo pip2 install --upgrade virtualenv
 # sudo pip2 install --upgrade virtualenvwrapper
 sudo pip3 install --upgrade pip
 sudo pip3 install --upgrade virtualenv
