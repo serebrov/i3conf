@@ -38,6 +38,8 @@ bindsym $mod+Q kill
 bindsym $mod+d exec dmenu_run -fn monospace:bold:size=9 -nb '#eee8d5' -nf '#073642' 
 # -sb '#dc322f' -p '> '
 
+bindsym $mod+space exec rofi -show drun -theme ~/.i3/rofi.rasi
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -81,7 +83,7 @@ bindsym $mod+e layout default
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+t focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -165,18 +167,19 @@ bindsym $mod+r mode "resize"
 #https://faq.i3wm.org/question/279/how-do-you-use-i3-comfortably/
 # sudo pm-suspend does't work, TODO: fix, see the link below
 # http://stackoverflow.com/questions/20312961/why-sudo-pm-suspend-does-not-work-in-i3-tiling-window-manager
-mode  "(s)leep (h)ybernate (p)owersave (r)estart shut(d)own" {
+mode  "(s)leep (h)ybernate (p)owersave (l)ogout (r)estart shut(d)own" {
 
         bindsym s exec sudo pm-suspend; mode "default"
         bindsym h exec sudo pm-hibernate; mode "default"
         bindsym p exec sudo pm-powersave; mode "default"
         bindsym d exec sudo 'shutdown -h now'; mode "default"
         bindsym r exec sudo 'shutdown -r now'; mode "default"
+        bindsym l exec /usr/bin/gnome-session-quit --logout; mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+n mode "(s)leep (h)ybernate (p)owersave (r)estart shut(d)own"
+bindsym $mod+n mode "(s)leep (h)ybernate (p)owersave (l)ogout (r)estart shut(d)own"
 
 mode  "Utils (a)lsamixer (h)top (p)avucontrol (u)nity-control-center (r)elod audio system (n)etwork-manager restart" {
 
