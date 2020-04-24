@@ -164,7 +164,6 @@ sudo apt install regolith-desktop
 
 ln -s ~/.i3/regolith/i3 ~/.config/regolith/i3
 ln -s ~/.i3/regolith/.Xresources-regolith ~/.Xresources-regolith
-ln -s ~/.i3/regolith/.Xresources.d ~/.Xresources.d
 
 #renameutils - Programs to make file renaming easier
 #http://www.nongnu.org/renameutils/
