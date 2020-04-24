@@ -52,12 +52,33 @@ hide_edge_borders smart
 # kill focused window
 # bindsym $mod+Shift+q kill
 
-set_from_resource $rofiTheme rofi.theme "/etc/regolith/rofi/regolith-theme"
+# set_from_resource $rofiTheme rofi.theme "/etc/regolith/rofi/regolith-theme"
+set_from_resource $rofiTheme rofi.theme /etc/regolith/styles/cahuella/rofi.rasi
+#
+## Launch // Application // <> Space ##
+set_from_resource $i3-wm.program.launcher.app i3-wm.program.launcher.app rofi -show drun -theme $rofiTheme
+bindsym $mod+space exec $i3-wm.program.launcher.app
+
+## Launch // Command // <><Shift> Space ##
+set_from_resource $i3-wm.program.launcher.cmd i3-wm.program.launcher.cmd rofi -show run -theme $rofiTheme
+bindsym $mod+Shift+space exec $i3-wm.program.launcher.cmd
+
+## Navigate // Window by Name // <><Ctrl> Space ##
+set_from_resource $i3-wm.program.launcher.window i3-wm.program.launcher.window rofi -show window -theme $rofiTheme
+bindsym $mod+Ctrl+space exec $i3-wm.program.launcher.window
+
+## Launch // This Dialog // <><Shift> ? ##
+set_from_resource $i3-wm.program.help i3-wm.program.help /usr/bin/remontoire-toggle
+bindsym $mod+Shift+question exec --no-startup-id $i3-wm.program.help
+
+## Launch // File Search // <><Alt> Space ##
+set_from_resource $i3-wm.program.file_search i3-wm.program.file_search rofi -show find -modi find:/usr/share/rofi/modi/finder.sh
+bindsym $mod+$alt+space exec $i3-wm.program.file_search
 
 # rofi app and window launchers
-bindsym $mod+space exec rofi -show drun -theme $rofiTheme
-bindsym $mod+Shift+space exec rofi -show run -theme $rofiTheme
-bindsym $mod+Ctrl+space exec rofi -show window -theme $rofiTheme
+# bindsym $mod+space exec rofi -show drun -theme $rofiTheme
+# bindsym $mod+Shift+space exec rofi -show run -theme $rofiTheme
+# bindsym $mod+Ctrl+space exec rofi -show window -theme $rofiTheme
 
 # change focus
 bindsym $mod+Left focus left
@@ -92,7 +113,7 @@ bindsym $mod+minus gaps inner current minus 6
 bindsym $mod+plus gaps inner current plus 6
 
 # show/hide keybindings
-bindsym $mod+Shift+question exec --no-startup-id /usr/bin/conky-toggle
+# bindsym $mod+Shift+question exec --no-startup-id /usr/bin/conky-toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
@@ -199,6 +220,24 @@ bindsym $mod+d exec gnome-control-center display
 bindsym $mod+n exec gnome-control-center network
 bindsym $mod+p exec gnome-control-center power
 bindsym $mod+s exec gnome-control-center sound
+
+# Workspace Management
+###############################################################################
+
+# i3-snapshot for load/save current layout
+## Modify // Save Window Layout // <> , ##
+bindsym $mod+comma  exec /usr/bin/i3-snapshot -o > /tmp/i3-snapshot 
+## Modify // Load Window Layout // <> . ##
+bindsym $mod+period exec /usr/bin/i3-snapshot -c < /tmp/i3-snapshot
+
+# Toggle bar visibility
+## Modify // Toggle Bar // <> i ##
+bindsym $mod+i bar mode toggle
+
+# Cause Settings app to float above tiled windows
+floating_maximum_size -1 x -1
+for_window [class="Gnome-control-center"] floating enable
+
 
 # resize window (you can also use the mouse for that)
 mode "Resize Mode" {
