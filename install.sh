@@ -113,21 +113,26 @@ sudo apt -y install syncthing
 # sudo apt-get -y install varnish
 
 ##### docker
+# Install docker and docker-compose (official Ubuntu repository)
+sudo apt -y install docker-compose
+
 # https://docs.docker.com/engine/installation/linux/ubuntulinux/
-sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
-sudo apt-get -y install docker-ce
+# sudo apt-get -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+# sudo apt-get update
+# sudo apt-get -y install docker-ce
+
 
 # Allow to use docker without sudo, logout/login or reboot to make it work
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # Docker compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-To install 
-sudo chmod +x /usr/local/bin/docker-compose
+# sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# To install 
+# sudo chmod +x /usr/local/bin/docker-compose
 
 ###### i3 + gnome3
 # http://blog.hugochinchilla.net/2013/03/using-gnome-3-with-i3-window-manager/
