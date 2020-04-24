@@ -194,8 +194,8 @@ git clone https://github.com/junegunn/fzf.git ~/.fzf
 
 # feh - image viewer
 # scrot - make a screenthot (binded to Print key in i3 config)
-# gmrun - app runner dialog (Win + G)
-sudo apt-get -y install feh # scrot gmrun
+# rofi - app runner dialog (Win + Space)
+sudo apt-get -y install feh rofi # scrot gmrun
 sudo apt-get -y install xbacklight xclip
 
 # shutter - screenshot tool (binded to Win+Print)
