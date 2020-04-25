@@ -76,7 +76,7 @@ set_from_resource $ws19 i3-wm.workspace.19.name "19"
 # bindsym $mod+Return exec /usr/bin/x-terminal-emulator
 
 ## Launch // Browser // <><Shift> Enter ##
-bindsym $mod+Shift+Return exec gtk-launch $(xdg-settings get default-web-browser)
+# bindsym $mod+Shift+Return exec gtk-launch $(xdg-settings get default-web-browser)
 
 set_from_resource $rofiTheme rofi.theme /etc/regolith/styles/cahuella/rofi.rasi
 #
@@ -151,8 +151,8 @@ bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+$alt+Left workspace prev
 
 ## Navigate // Scratchpad // <><Ctrl> a ##
-# Custom binding is below
 # bindsym $mod+Ctrl+a scratchpad show
+# Custom binding
 bindsym $mod+o scratchpad show
 
 ###############################################################################
@@ -187,8 +187,9 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+Shift+f floating toggle
 
 ## Modify // Move to Scratchpad // <><Ctrl> m ##
-# Custom binding is below
 # bindsym $mod+Ctrl+m move to scratchpad
+# Custom binding
+bindsym $mod+m move to scratchpad
 
 ## Modify // Tile/Float Focus Toggle // <><Shift> t ##
 bindsym $mod+Shift+t focus mode_toggle
@@ -533,9 +534,9 @@ workspace_auto_back_and_forth yes
 # border changing
 # bindsym $mod+b border toggle
 
-# Scratchpad
-bindsym $mod+m move to scratchpad
-bindsym $mod+o scratchpad show
+# Scratchpad (defined above)
+# bindsym $mod+m move to scratchpad
+# bindsym $mod+o scratchpad show
 
 # start a terminal -> use konsole by default.
 # Note: Ctrl-Shift-M to show / hide the console menubar.
@@ -624,11 +625,17 @@ set_from_resource $i3-wm.program.3 i3-wm.program.3 :
 exec --no-startup-id $i3-wm.program.3
 
 
+###############################################################################
+# Custom changes
+###############################################################################
+#
 # Set dpi and scale for laptop screen
 # exec --no-startup-id xrandr --output eDP-1 --dpi 216 --scale 1.2x1.2
 exec --no-startup-id gnome-terminal --role=xterm_scratchpad -e zsh
 
 # http://127.0.0.1:8384/#
 exec --no-startup-id syncthing
+
+# exec --no-startup-id xrandr --dpi 220
 
 # END Custom changes
