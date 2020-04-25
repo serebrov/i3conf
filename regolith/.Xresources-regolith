@@ -1,17 +1,39 @@
+! Additional Xresources for regolith.
+! Update after changes with: xrdb -merge ~/.Xresources-regolith
+! Check settings: xrdb -query
+! or: xrescat setting.name (xrescat rofi.font)
+! 
 ! -- Custom: Fonts
 ! Xft.antialias: true
 ! Xft.hinting:   true
 ! Xft.rgba:      rgb
 ! Xft.hintstyle: hintfull
-! -- 216 / 1.2 = 180
-! -- We set 1.2 scale in ~/.i3/regolith/config
+! ! -- 216 / 1.2 = 180
+! ! -- We set 1.2 scale in ~/.i3/regolith/config
 ! Xft.dpi:       216
 
 ! This is the Regolith root-level Xresources file.
-#include "/etc/regolith/styles/root"
+! #include "/etc/regolith/styles/root"
+#include "/etc/regolith/styles/ubuntu/root"
 
 ! -- Overrdie font styles
-!#define typeface_bar_glyph  Ubuntu Mono 14
-!#define typeface_bar        pango:FontAwesome 13
-!#define typeface_rofi       Ubuntu Mono 23
-!#define typeface_terminal   Liga Input Mono:pixelsize=27:antialias=true:autohint=true
+! from /etc/regolith/styles/lascaille/typeface
+#define typeface_bar_glyph  JetBrains Mono Medium 9
+#define typeface_wm         pango:JetBrains Mono Medium 9
+#define typeface_bar        pango:JetBrains Mono Medium 9, Material Design Icons 9
+#define typeface_rofi       JetBrains Mono Medium 18
+#define typeface_terminal   JetBrains Mono:pixelsize=8:antialias=true:autohint=true
+#define typeface_gnome_terminal JetBrains Mono 8
+
+! -- Note: we need to re-include applications secion here (from the
+! -- `root` file included above) to actually apply defined values.
+! -- Otherwise we just have `define`s without applying them to
+! -- variables (such as `rofi.font`).
+! --
+! -- Applications
+! These files map values defined above into specific app settings.
+#include "/etc/regolith/styles/st-term"
+#include "/etc/regolith/styles/i3-wm"
+#include "/etc/regolith/styles/i3xrocks"
+#include "/etc/regolith/styles/rofi"
+#include "/etc/regolith/styles/gnome"
