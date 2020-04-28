@@ -159,8 +159,13 @@ sudo chmod +x ~/.i3/autostart
 ln -s ~/.i3/.i3status.conf ~/.i3status.conf
 
 # Regolith (i3 "bundle")
-sudo add-apt-repository -y ppa:kgilmer/regolith-stable
-sudo apt install regolith-desktop
+
+# Beta releases
+# sudo add-apt-repository -y ppa:kgilmer/regolith-stable
+# sudo apt install regolith-desktop
+
+sudo add-apt-repository ppa:regolith-linux/release
+sudo apt install regolith-desktop i3xrocks-net-traffic i3xrocks-cpu-usage i3xrocks-time
 
 ln -s ~/.i3/regolith/i3 ~/.config/regolith/i3
 ln -s ~/.i3/regolith/.Xresources-regolith ~/.Xresources-regolith
