@@ -678,8 +678,6 @@ bindsym $mod+Ctrl+o scratchpad show
 # Tabbed layout initially.
 # workspace_layout tabbed
 
-# workspace_auto_back_and_forth yes
-
 # start a terminal -> use konsole by default.
 # Note: Ctrl-Shift-M to show / hide the console menubar.
 # bindsym $mod+Return exec $terminal_path
@@ -692,7 +690,7 @@ bindsym $mod+Ctrl+o scratchpad show
 # Gmrun (sudo apt-get install gmrun)
 # Rofi can't (or I didn't find how to) launch the app using path, such as
 # ~/myapp/<TAB> ...
-# bindsym $mod+g exec gmrun
+bindsym $mod+Ctrl+f exec gmrun
 
 # bindsym $mod+t exec "~/.i3/scripts/touchpad-toggle.sh"
 
