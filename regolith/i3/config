@@ -220,7 +220,7 @@ bindsym $mod+$i3-wm.binding.next_free exec --no-startup-id /usr/share/i3xrocks/n
 set_from_resource $i3-wm.binding.scratchpad i3-wm.binding.scratchpad Ctrl+a
 bindsym $mod+$i3-wm.binding.scratchpad scratchpad show
 # custom binding (for some reason it does not work, the above and ctrl binding below work).
-bindsym $mod+o scratchpad show
+# bindsym $mod+o scratchpad show
 bindsym $mod+Ctrl+o scratchpad show
 
 ###############################################################################

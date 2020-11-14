@@ -165,10 +165,12 @@ ln -s ~/.i3/.i3status.conf ~/.i3status.conf
 # sudo apt install regolith-desktop
 
 sudo add-apt-repository ppa:regolith-linux/release
-sudo apt install regolith-desktop i3xrocks-net-traffic i3xrocks-cpu-usage i3xrocks-time
+sudo apt install regolith-desktop-standard
+# i3xrocks-net-traffic i3xrocks-cpu-usage i3xrocks-time
 
 ln -s ~/.i3/regolith/i3 ~/.config/regolith/i3
-ln -s ~/.i3/regolith/.Xresources-regolith ~/.Xresources-regolith
+ln -s ~/.i3/regolith/Xresources ~/.config/regolith/Xresources
+# ln -s ~/.i3/regolith/.Xresources-regolith ~/.Xresources-regolith
 
 #renameutils - Programs to make file renaming easier
 #http://www.nongnu.org/renameutils/
