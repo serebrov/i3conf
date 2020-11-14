@@ -219,9 +219,6 @@ bindsym $mod+$i3-wm.binding.next_free exec --no-startup-id /usr/share/i3xrocks/n
 ## Navigate // Scratchpad // <><Ctrl> a ##
 set_from_resource $i3-wm.binding.scratchpad i3-wm.binding.scratchpad Ctrl+a
 bindsym $mod+$i3-wm.binding.scratchpad scratchpad show
-# custom binding (for some reason it does not work, the above and ctrl binding below work).
-# bindsym $mod+o scratchpad show
-bindsym $mod+Ctrl+o scratchpad show
 
 ###############################################################################
 # Window and Workspace Configuration
@@ -672,18 +669,15 @@ exec --no-startup-id $i3-wm.program.3
 # Custom changes
 ###############################################################################
 
-# bindsym $mod+o scratchpad show
-
-# kill focused window
-# bindsym $mod+q kill
-
-# focus the parent container
-# bindsym $mod+a focus parent
+# We set mod+o via Xresources, but for some reason "o" keybinding sometimes
+# does not work, probably conflicts with some system shortcut.
+# It is not stable and sometimes it works too.
+# Here we add mod-ctrl-o as a backup.
+bindsym $mod+Ctrl+o scratchpad show
 
 # Tabbed layout initially.
 # workspace_layout tabbed
 
-# For example, Win-2 to switch to 2 and Win-2 again to go back to previous space.
 # workspace_auto_back_and_forth yes
 
 # start a terminal -> use konsole by default.
