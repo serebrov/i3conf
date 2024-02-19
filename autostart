@@ -11,7 +11,7 @@ SCRIPT_PATH=`dirname $0`
 # Note: need to set scale to 200% in gnome settings.
 # See also Makefile
 # xrandr --output eDP-1 --dpi 216 --scale 1.25x1.25
-xrandr --dpi 220
+# xrandr --dpi 220
 
 # check the current resolution:
 # xdpyinfo | grep -b 2 resolution 

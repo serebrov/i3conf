@@ -1,0 +1,15 @@
+! See https://regolith-desktop.com/docs/using-regolith/configuration/
+! we can override both look and i3 keybindings from here.
+! Changes can be applied by running
+!   regolith-look refresh
+!
+! Check current values with this command
+!   xrdb -query
+!
+! The list of parameters: https://regolith-linux.org/docs/reference/xresources/
+! Also check the i3 config itself and files under /etc/regolith/.
+i3-wm.workspace.auto_back_and_forth: yes
+! For example, Win-2 to switch to 2 and Win-2 again to go back to previous space.
+i3-wm.binding.scratchpad: o
+!regolith.look.path: /usr/share/regolith-look/nevil
+regolith.look.path: /usr/share/regolith-look/nord
