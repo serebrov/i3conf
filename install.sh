@@ -252,6 +252,8 @@ sudo apt-get -y install htop
 
 ### ranger
 sudo apt-get -y install ranger
+sudo apt-get -y install broot
+sudo apt-get -y install nnn
 
 ### Sound settings
 sudo apt-get install pavucontrol
