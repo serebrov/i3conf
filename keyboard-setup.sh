@@ -7,4 +7,4 @@
 # http://www.xgu.ru/wiki/xkb
 # https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg
 #setxkbmap us,ru -option "grp:caps_toggle,grp_led:caps" -option compose:menu
-setxkbmap us,ru,ua -option "grp:caps_toggle,grp_led:caps" -option compose:menu
+#setxkbmap us,ru,ua -option "grp:caps_toggle,grp_led:caps" -option compose:menu

@@ -1,0 +1,15 @@
+bindsym $mod+o scratchpad show
+
+for_window [window_role="xterm_scratchpad"] border 1pixel, move scratchpad
+for_window [title="termscratch"] border 1pixel, move scratchpad
+
+for_window [class="^Gnome-terminal$"] border none
+for_window [class="^Konsole$"] border none
+for_window [class="keepassxc"] floating enable; border none
+
+# konsole does not have `--title` option
+# exec --no-startup-id konsole --title=termscratch --hide-menubar --hide-tabbar -e zsh
+exec --no-startup-id gnome-terminal --role=xterm_scratchpad -e zsh
+
+# autostart
+# exec ~/.i3/autostart

@@ -1,3 +1,16 @@
+Note on current setup for regoligh3: I have very minimal setup that uses regolith3 defaults. The config is in the `regolith3` folder and linked to the `.config` folder with:
+
+```shell
+ln -s ~/.i3/regolith3 ~/.config/regolith3
+```
+
+We also have here:
+* config - original i3 config (without regolith)
+* regolith/ and regolith2 - previous regolith setups (more customized)
+* Various scripts that were used with the original (no regolith i3 setup), still useful for reference.
+
+---
+
 [i3 window manager](http://i3wm.org/) config
 
 [i3 docs](http://i3wm.org/docs/)
